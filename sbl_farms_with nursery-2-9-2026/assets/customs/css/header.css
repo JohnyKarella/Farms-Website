@@ -1,5 +1,5 @@
 /* ================================================================
-   SBL FARMS - COMPACT MODERN HEADER
+   SBL FARMS - ELEGANT MODERN HEADER (INCREASED PROPORTIONS)
    ================================================================ */
 
 /* Header Root */
@@ -14,9 +14,9 @@
     left: 0 !important;
     right: 0 !important;
     width: 100% !important;
-    height: 60px !important;
-    min-height: 60px !important;
-    max-height: 60px !important;
+    height: 74px !important;
+    min-height: 74px !important;
+    max-height: 74px !important;
     background-color: #2e4b2d !important;
     border-bottom: 1px solid rgba(201, 168, 76, 0.25) !important;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2) !important;
@@ -42,7 +42,7 @@
     max-width: 1440px !important;
     height: 100% !important;
     margin: 0 auto !important;
-    padding: 0 24px !important;
+    padding: 0 28px !important;
     display: flex !important;
     align-items: center !important;
     justify-content: space-between !important;
@@ -70,8 +70,8 @@
 }
 
 .sbl-header .sbl-header-logo {
-    height: 44px !important;
-    max-height: 44px !important;
+    height: 52px !important;
+    max-height: 52px !important;
     width: auto !important;
     display: block !important;
     object-fit: contain !important;
@@ -92,7 +92,7 @@
     justify-content: center !important;
     height: 100% !important;
     margin: 0 !important;
-    padding: 0 15px !important;
+    padding: 0 16px !important;
 }
 
 .sbl-header .sbl-nav-menu > ul.biolife-menu {
@@ -104,7 +104,7 @@
     padding: 0 !important;
     list-style: none !important;
     flex-wrap: nowrap !important;
-    gap: 12px !important;
+    gap: 14px !important;
 }
 
 .sbl-header .sbl-nav-menu > ul.biolife-menu > li {
@@ -120,14 +120,14 @@
 /* Regular Links */
 .sbl-header .sbl-nav-menu > ul.biolife-menu > li > a {
     color: #ffffff !important;
-    font-size: 14.5px !important;
+    font-size: 15px !important;
     font-weight: 600 !important;
     font-family: Helvetica, Arial, sans-serif !important;
     text-decoration: none !important;
     display: inline-flex !important;
     align-items: center !important;
     line-height: 1 !important;
-    padding: 6px 8px !important;
+    padding: 8px 10px !important;
     border-radius: 6px !important;
     letter-spacing: 0.3px !important;
     transition: color 0.2s ease, transform 0.2s ease !important;
@@ -139,8 +139,8 @@
 
 /* Caret Arrow for Explore */
 .sbl-header .sbl-caret {
-    font-size: 12px !important;
-    margin-left: 5px !important;
+    font-size: 13px !important;
+    margin-left: 6px !important;
     transition: transform 0.25s ease !important;
 }
 
@@ -158,11 +158,11 @@
 
 /* Leaf Pill Nav Items (Agritour & Nursery) */
 .sbl-header .nav-pill-btn {
-    border-radius: 20px 0px 20px 0px !important;
+    border-radius: 22px 0px 22px 0px !important;
     background: #c9a84c !important;
     color: #ffffff !important;
-    padding: 5px 16px !important;
-    font-size: 13.5px !important;
+    padding: 6px 18px !important;
+    font-size: 14px !important;
     font-weight: 600 !important;
     line-height: 1.2 !important;
     display: inline-flex !important;
@@ -187,13 +187,13 @@
     top: calc(100% - 2px) !important;
     left: 50% !important;
     transform: translateX(-50%) translateY(10px) !important;
-    width: 780px !important;
+    width: 800px !important;
     max-width: 90vw !important;
     background: #ffffff !important;
     border-radius: 14px !important;
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.18) !important;
     border: 1px solid rgba(0, 0, 0, 0.06) !important;
-    padding: 22px 24px 18px !important;
+    padding: 24px 26px 20px !important;
     opacity: 0 !important;
     visibility: hidden !important;
     transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
@@ -260,11 +260,11 @@
 
 /* Enquire Now CTA Button */
 .sbl-header .sbl-cta-btn {
-    border-radius: 20px 0px 20px 0px !important;
+    border-radius: 22px 0px 22px 0px !important;
     background: #c9a84c !important;
     color: #ffffff !important;
-    padding: 6px 18px !important;
-    font-size: 13px !important;
+    padding: 8px 22px !important;
+    font-size: 13.5px !important;
     font-weight: 700 !important;
     text-transform: uppercase !important;
     letter-spacing: 0.5px !important;
@@ -295,8 +295,8 @@
     flex-direction: column !important;
     justify-content: center !important;
     align-items: center !important;
-    width: 38px !important;
-    height: 38px !important;
+    width: 40px !important;
+    height: 40px !important;
     background: rgba(255, 255, 255, 0.1) !important;
     border-radius: 8px !important;
     padding: 8px !important;
@@ -311,7 +311,7 @@
 
 .sbl-header .sbl-mobile-toggle .btn-toggle span {
     display: block !important;
-    width: 20px !important;
+    width: 22px !important;
     height: 2px !important;
     background: #ffffff !important;
     margin: 2.5px 0 !important;
@@ -326,40 +326,44 @@
 /* Laptops / Desktops (992px to 1199px) */
 @media (min-width: 992px) and (max-width: 1199px) {
     .sbl-header .sbl-nav-menu > ul.biolife-menu {
-        gap: 8px !important;
+        gap: 9px !important;
     }
     .sbl-header .sbl-nav-menu > ul.biolife-menu > li > a {
-        font-size: 13px !important;
-        padding: 4px 6px !important;
+        font-size: 13.5px !important;
+        padding: 6px 8px !important;
     }
     .sbl-header .nav-pill-btn {
-        padding: 4px 12px !important;
-        font-size: 12.5px !important;
+        padding: 5px 14px !important;
+        font-size: 13px !important;
     }
     .sbl-header .sbl-cta-btn {
-        padding: 5px 14px !important;
-        font-size: 12px !important;
+        padding: 6px 16px !important;
+        font-size: 12.5px !important;
     }
     .sbl-header .sbl-header-logo {
-        height: 40px !important;
-        max-height: 40px !important;
+        height: 46px !important;
+        max-height: 46px !important;
     }
 }
 
 /* Tablets and Mobiles (< 992px) */
 @media (max-width: 991px) {
     #header.sbl-header,
-    .header-area.sbl-header {
-        height: 56px !important;
-        min-height: 56px !important;
-        max-height: 56px !important;
+    .header-area.sbl-header,
+    #header.sbl-header.pre-sticky,
+    #header.sbl-header.is-sticky,
+    .header-area.sbl-header.pre-sticky,
+    .header-area.sbl-header.is-sticky {
+        height: 62px !important;
+        min-height: 62px !important;
+        max-height: 62px !important;
     }
     .sbl-header .sbl-header-container {
-        padding: 0 16px !important;
+        padding: 0 18px !important;
     }
     .sbl-header .sbl-header-logo {
-        height: 38px !important;
-        max-height: 38px !important;
+        height: 42px !important;
+        max-height: 42px !important;
     }
     .sbl-header .sbl-nav-menu {
         display: none !important;
@@ -368,16 +372,16 @@
         display: flex !important;
     }
     .sbl-header .sbl-cta-btn {
-        padding: 5px 12px !important;
-        font-size: 12px !important;
+        padding: 6px 14px !important;
+        font-size: 12.5px !important;
     }
 }
 
 /* Small Mobiles (< 480px) */
 @media (max-width: 480px) {
     .sbl-header .sbl-header-logo {
-        height: 34px !important;
-        max-height: 34px !important;
+        height: 38px !important;
+        max-height: 38px !important;
     }
     .sbl-header .sbl-cta-btn {
         display: none !important;
