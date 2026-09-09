@@ -23,11 +23,11 @@
 
     <link rel="stylesheet" href="assets/css/nice-select.css">
     <link rel="stylesheet" href="assets/css/slick.min.css">
-    <link rel="stylesheet" href="assets/css/style.css?v=2">
+    <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/main-color03-green.css">
 
     <link rel="stylesheet" href="assets/css/others.css">
-    <link rel="stylesheet" href="assets/css/expand-width.css?v=2">
+    <link rel="stylesheet" href="assets/css/expand-width.css">
 
     <!-- Custom -->
     <link rel="stylesheet" href="assets/customs/css/bnr2.css">
@@ -47,6 +47,7 @@
     <!-- <link rel="stylesheet" href="assets/customs/css/animations.css"> -->
     <link rel="stylesheet" href="assets/customs/css/contact.css">
     <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/customs/css/header.css?v=2">
 
 </head>
 
@@ -78,126 +79,93 @@
     </div>
 
     <!-- HEADER -->
-    <header id="header" class="header-area style-01 layout-03">
-        <div class="header-middle biolife-sticky-object ">
-            <div class="container">
+    <header id="header" class="header-area biolife-sticky-object sbl-header">
+        <div class="sbl-header-middle">
+            <div class="sbl-header-container">
 
-                <div class="row">
+                <!-- Logo (Left) -->
+                <div class="sbl-logo-wrap">
+                    <a href="index.html" class="sbl-logo-link">
+                        <img src="assets/images/footerlogo.png" alt="SBL Farms Logo" class="sbl-header-logo">
+                    </a>
+                </div>
 
-                    <div class="col-lg-3 col-md-2 col-md-6 col-xs-6">
-                        <a href="index.html" class="biolife-logo"><img src="assets/images/footerlogo.png"
-                                alt="SBL biolife logo" style="max-height: 48px; width: auto; display: block;"></a>
-                    </div>
+                <!-- Primary Navigation (Center) -->
+                <div class="primary-menu sbl-nav-menu">
+                    <ul class="menu biolife-menu clone-main-menu clone-primary-menu" id="primary-menu"
+                        data-menuname="main menu">
 
-                    <div class="col-lg-8 col-md-7 hidden-sm hidden-xs">
-                        <div class="primary-menu">
+                        <li class="menu-item"><a href="index.html">Home</a></li>
 
-                            <ul class="menu biolife-menu clone-main-menu clone-primary-menu" id="primary-menu"
-                                data-menuname="main menu">
-
-                                <li class="menu-item"><a href="index.html">Home</a></li>
-
-                                <li class="menu-item menu-item-has-children has-megamenu">
-                                    <a href="#" class="menu-name" data-title="Pages">Explore</a>
-                                    <div class="wrap-megamenu lg-width-800 md-width-750">
-                                        <div class="mega-content">
-                                            <div
-                                                class="col-lg-3 col-md-3 col-xs-12 md-margin-bottom-0 xs-margin-bottom-25">
-                                                <div class="wrap-custom-menu vertical-menu">
-
-                                                    <ul class="menu">
-                                                        <li><a href="nursery.html"><strong>Nursery</strong></a></li>
-                                                        <li><a href="Dairy.html"><strong>Dairy</strong></a></li>
-                                                        <li><a href="greenwall.html"><strong>Greenwall</strong></a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                            <div
-                                                class="col-lg-3 col-md-3 col-xs-12 md-margin-bottom-0 xs-margin-bottom-25">
-                                                <div class="wrap-custom-menu vertical-menu">
-
-                                                    <ul class="menu">
-                                                        <li><a href="aquatic_plants.html"><strong>Aquatic
-                                                                    Plants</strong></a></li>
-                                                        <li><a href="aviary.html"><strong>Aviary</strong></a></li>
-
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                            <div
-                                                class="col-lg-3 col-md-3 col-xs-12 md-margin-bottom-0 xs-margin-bottom-25">
-                                                <div class="wrap-custom-menu vertical-menu">
-
-                                                    <ul class="menu">
-                                                        <li><a href="landscape.html"><strong>Lanscaping</strong></a>
-                                                        </li>
-                                                        <li><a href="corn_silage.html"><strong>Corn Silage</strong></a>
-                                                        </li>
-
-                                                    </ul>
-                                                </div>
-                                            </div>
-
-                                            <div
-                                                class="col-lg-3 col-md-3 col-xs-12 md-margin-bottom-0 xs-margin-bottom-25">
-                                                <div class="wrap-custom-menu vertical-menu">
-
-                                                    <ul class="menu">
-
-                                                        <li><a href="events.html"><strong>Event Venue</strong></a></li>
-                                                        <li><a href="bio_gas.html"><strong>Biogas</strong></a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-
+                        <li class="menu-item menu-item-has-children has-megamenu">
+                            <a href="javascript:void(0)" class="menu-name" data-title="Explore">Explore <i class="fa fa-angle-down sbl-caret"></i></a>
+                            <div class="wrap-megamenu lg-width-800 md-width-750">
+                                <div class="mega-content">
+                                    <div class="col-lg-3 col-md-3 col-xs-12">
+                                        <div class="wrap-custom-menu vertical-menu">
+                                            <ul class="menu">
+                                                <li><a href="nursery.html"><strong>Nursery</strong></a></li>
+                                                <li><a href="dairy.html"><strong>Dairy</strong></a></li>
+                                                <li><a href="greenwall.html"><strong>Greenwall</strong></a></li>
+                                            </ul>
                                         </div>
                                     </div>
-                                </li>
-
-                                <li class="menu-item"
-                                    style="border-radius: 30px 0px 30px 0px; background: #c9a84c; padding: 4px 15px;">
-                                    <a href="agritour.html">Agritour</a>
-                                </li>
-
-                                <li class="menu-item"
-                                    style="border-radius: 30px 0px 30px 0px; background: #c9a84c; padding: 4px 15px;">
-                                    <a href="nursery.html">Nursery</a>
-                                </li>
-
-
-                                <li class="menu-item"><a href="gallery.html">Gallery</a></li>
-                                <li class="menu-item"><a href="all_blogs.html">Blogs</a></li>
-
-                                <li class="menu-item"><a href="contact.html">Contact</a></li>
-
-                                <li class="menu-item"
-                                    style="border-radius: 30px 0px 30px 0px; background: #c9a84c; padding: 4px 15px;">
-                                    <a href="contact.html">Enquire Now</a>
-                                </li>
-
-                            </ul>
-
-
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-md-3 col-md-6 col-xs-6">
-                        <div class="biolife-cart-info">
-
-                            <div class="mobile-menu-toggle">
-                                <a class="btn-toggle" data-object="open-mobile-menu" href="javascript:void(0)">
-                                    <span></span>
-                                    <span></span>
-                                    <span></span>
-                                </a>
+                                    <div class="col-lg-3 col-md-3 col-xs-12">
+                                        <div class="wrap-custom-menu vertical-menu">
+                                            <ul class="menu">
+                                                <li><a href="aquatic_plants.html"><strong>Aquatic Plants</strong></a></li>
+                                                <li><a href="aviary.html"><strong>Aviary</strong></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-3 col-xs-12">
+                                        <div class="wrap-custom-menu vertical-menu">
+                                            <ul class="menu">
+                                                <li><a href="landscape.html"><strong>Landscaping</strong></a></li>
+                                                <li><a href="corn_silage.html"><strong>Corn Silage</strong></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-3 col-xs-12">
+                                        <div class="wrap-custom-menu vertical-menu">
+                                            <ul class="menu">
+                                                <li><a href="events.html"><strong>Event Venue</strong></a></li>
+                                                <li><a href="bio_gas.html"><strong>Biogas</strong></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
+                        </li>
 
+                        <li class="menu-item nav-pill-item">
+                            <a href="agritour.html" class="nav-pill-btn">Agritour</a>
+                        </li>
 
+                        <li class="menu-item nav-pill-item">
+                            <a href="nursery.html" class="nav-pill-btn">Nursery</a>
+                        </li>
 
-                        </div>
-                    </div>
+                        <li class="menu-item"><a href="gallery.html">Gallery</a></li>
+                        <li class="menu-item"><a href="all_blogs.html">Blogs</a></li>
+                        <li class="menu-item"><a href="contact.html">Contact</a></li>
 
+                    </ul>
                 </div>
+
+                <!-- Actions (Right): CTA & Mobile Hamburger -->
+                <div class="sbl-header-actions">
+                    <a href="contact.html" class="sbl-cta-btn">Enquire Now</a>
+
+                    <div class="mobile-menu-toggle sbl-mobile-toggle">
+                        <a class="btn-toggle" data-object="open-mobile-menu" href="javascript:void(0)" aria-label="Open navigation menu">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </a>
+                    </div>
+                </div>
+
             </div>
         </div>
     </header>
