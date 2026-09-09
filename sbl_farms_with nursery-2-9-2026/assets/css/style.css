@@ -1144,7 +1144,7 @@ body {
 }
 
 .header-area .header-middle {
-    padding: 8px 0 !important;
+    padding: 6px 0 !important;
 }
 
 .header-area .header-middle .row {
@@ -1172,15 +1172,15 @@ body {
 }
 
 .header-area .biolife-logo img {
-    height: 52px !important;
-    max-height: 52px !important;
+    height: 48px !important;
+    max-height: 48px !important;
     width: auto !important;
     display: block !important;
     transition: transform 0.25s ease;
 }
 
 .header-area .biolife-logo:hover img {
-    transform: scale(1.04);
+    transform: scale(1.05);
 }
 
 .header-area .header-middle .row > [class*="col-"]:nth-child(2) {

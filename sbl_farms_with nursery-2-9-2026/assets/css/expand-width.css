@@ -1,0 +1,488 @@
+/* ================================================================
+   expand-width.css  —  SBL Farms
+   ----------------------------------------------------------------
+   PURPOSE  : Gradually expand ALL page containers on desktop and
+              larger screens so no white space is wasted.
+   SCOPE    : Desktop only (min-width: 1200px and above).
+              Mobile / tablet (< 1200px) are 100% untouched.
+   APPROACH : Progressive breakpoints — wider screen = wider layout.
+   ================================================================ */
+
+
+/* ================================================================
+   1.  BOOTSTRAP .container  (was capped at 1170px)
+   ================================================================ */
+
+@media (min-width: 1200px) {
+    .container {
+        width: 94% !important;
+        max-width: 1400px !important;
+    }
+}
+
+@media (min-width: 1400px) {
+    .container {
+        width: 94% !important;
+        max-width: 1600px !important;
+    }
+}
+
+@media (min-width: 1600px) {
+    .container {
+        width: 92% !important;
+        max-width: 1800px !important;
+    }
+}
+
+@media (min-width: 1920px) {
+    .container {
+        width: 90% !important;
+        max-width: 1400px !important;
+    }
+}
+
+
+/* ================================================================
+   2.  NAVBAR
+   ================================================================ */
+
+@media (min-width: 1200px) {
+
+    .navbar>.container,
+    .navbar>.container-fluid {
+        width: 100% !important;
+    }
+}
+
+
+/* ================================================================
+   3.  FOOTER  —  .footer-cta .inner / .footer-main /
+                  .footer-divider / .footer-bottom .inner
+   ================================================================ */
+
+@media (min-width: 1200px) {
+
+    .footer-cta .inner,
+    .footer-main,
+    .footer-divider,
+    .footer-bottom .inner {
+        max-width: 1400px !important;
+    }
+}
+
+@media (min-width: 1400px) {
+
+    .footer-cta .inner,
+    .footer-main,
+    .footer-divider,
+    .footer-bottom .inner {
+        max-width: 1600px !important;
+    }
+}
+
+@media (min-width: 1600px) {
+
+    .footer-cta .inner,
+    .footer-main,
+    .footer-divider,
+    .footer-bottom .inner {
+        max-width: 1800px !important;
+    }
+}
+
+@media (min-width: 1920px) {
+
+    .footer-cta .inner,
+    .footer-main,
+    .footer-divider,
+    .footer-bottom .inner {
+        max-width: 2000px !important;
+    }
+}
+
+
+/* ================================================================
+   4.  ABOUT  —  .container_about  /  .container_greenwall
+   ================================================================ */
+
+@media (min-width: 1200px) {
+
+    .container_about,
+    .container_greenwall {
+        max-width: 1400px !important;
+    }
+}
+
+@media (min-width: 1400px) {
+
+    .container_about,
+    .container_greenwall {
+        max-width: 1200px !important;
+    }
+}
+
+@media (min-width: 1600px) {
+
+    .container_about,
+    .container_greenwall {
+        max-width: 1800px !important;
+    }
+}
+
+@media (min-width: 1920px) {
+
+    .container_about,
+    .container_greenwall {
+        max-width: 1350px !important;
+    }
+}
+
+
+/* ================================================================
+   5.  GREEN WALL  —  .container_green
+   ================================================================ */
+
+@media (min-width: 1200px) {
+    .container_green {
+        max-width: 1400px !important;
+    }
+}
+
+@media (min-width: 1400px) {
+    .container_green {
+        max-width: 1600px !important;
+    }
+}
+
+@media (min-width: 1600px) {
+    .container_green {
+        max-width: 1800px !important;
+    }
+}
+
+@media (min-width: 1920px) {
+    .container_green {
+        max-width: 2000px !important;
+    }
+}
+
+
+/* ================================================================
+   6.  TESTIMONIALS  —  .testi-header / .testi-controls /
+                         .testi-progress
+   ================================================================ */
+
+@media (min-width: 1200px) {
+
+    .testi-header,
+    .testi-controls,
+    .testi-progress {
+        max-width: 1400px !important;
+    }
+}
+
+@media (min-width: 1400px) {
+
+    .testi-header,
+    .testi-controls,
+    .testi-progress {
+        max-width: 1600px !important;
+    }
+}
+
+@media (min-width: 1600px) {
+
+    .testi-header,
+    .testi-controls,
+    .testi-progress {
+        max-width: 1800px !important;
+    }
+}
+
+@media (min-width: 1920px) {
+
+    .testi-header,
+    .testi-controls,
+    .testi-progress {
+        max-width: 2000px !important;
+    }
+}
+
+
+/* ================================================================
+   7.  DAIRY  —  .dairy-about
+   ================================================================ */
+
+@media (min-width: 1200px) {
+    .dairy-about {
+        max-width: 1400px !important;
+    }
+}
+
+@media (min-width: 1400px) {
+    .dairy-about {
+        max-width: 1600px !important;
+    }
+}
+
+@media (min-width: 1600px) {
+    .dairy-about {
+        max-width: 1800px !important;
+    }
+}
+
+@media (min-width: 1920px) {
+    .dairy-about {
+        max-width: 2000px !important;
+    }
+}
+
+
+/* ================================================================
+   8.  HERO BANNER  —  .slide-content (text overlay — widen gently)
+   ================================================================ */
+
+@media (min-width: 1200px) {
+    .slide-content {
+        max-width: 860px !important;
+    }
+}
+
+@media (min-width: 1600px) {
+    .slide-content {
+        max-width: 1000px !important;
+    }
+}
+
+
+/* ================================================================
+   9.  BANNER GALLERY  —  .container_gallery
+   ================================================================ */
+
+@media (min-width: 1600px) {
+    .container_gallery {
+        max-width: 1700px !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+}
+
+@media (min-width: 1920px) {
+    .container_gallery {
+        max-width: 1500px !important;
+    }
+}
+
+
+/* ================================================================
+   10. AGRI-TOUR  —  .container_agritour  /  .container_faq
+   ================================================================ */
+
+@media (min-width: 1600px) {
+
+    .container_agritour,
+    .container_faq {
+        max-width: 1700px !important;
+    }
+}
+
+@media (min-width: 1920px) {
+
+    .container_agritour,
+    .container_faq {
+        max-width: 1400px !important;
+    }
+}
+
+
+/* ================================================================
+   11. TABS  —  .container_tabs
+   ================================================================ */
+
+@media (min-width: 1600px) {
+    .container_tabs {
+        max-width: 1700px !important;
+    }
+}
+
+@media (min-width: 1920px) {
+    .container_tabs {
+        max-width: 1600px !important;
+    }
+}
+
+
+
+/* ================================================================
+   11. Blogs  —  .container_tabs
+   ================================================================ */
+
+@media (min-width: 1600px) {
+    .container_blogs {
+        max-width: 1700px !important;
+    }
+}
+
+@media (min-width: 1920px) {
+    .container_blogs {
+        max-width: 1600px !important;
+    }
+}
+
+
+
+/* ================================================================
+   12. FULL-WIDTH WRAPPERS
+       Sections and rows must be truly full-width on all desktops
+   ================================================================ */
+
+@media (min-width: 1200px) {
+
+    .header-area,
+    .footer-area,
+    .footer-section,
+    section,
+    .section {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+}
+
+/* ================================================================
+   13. COMPACT MODERN HEADER
+   ================================================================ */
+.header-area,
+#header {
+    min-height: 0 !important;
+}
+
+.header-area .header-middle {
+    padding: 6px 0 !important;
+}
+
+.header-area .header-middle .row {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    flex-wrap: nowrap !important;
+}
+
+.header-area .header-middle .row::before,
+.header-area .header-middle .row::after {
+    display: none !important;
+}
+
+.header-area .header-middle .row > [class*="col-"]:first-child {
+    flex: 0 0 auto !important;
+    width: auto !important;
+    max-width: none !important;
+    padding-right: 15px !important;
+}
+
+.header-area .biolife-logo {
+    display: inline-flex !important;
+    align-items: center !important;
+    line-height: 1 !important;
+}
+
+.header-area .biolife-logo img {
+    height: 48px !important;
+    max-height: 48px !important;
+    width: auto !important;
+    display: block !important;
+    transition: transform 0.25s ease;
+}
+
+.header-area .biolife-logo:hover img {
+    transform: scale(1.05);
+}
+
+.header-area .header-middle .row > [class*="col-"]:nth-child(2) {
+    flex: 1 1 auto !important;
+    width: auto !important;
+    max-width: none !important;
+    display: flex !important;
+    justify-content: flex-end !important;
+}
+
+.header-area .primary-menu {
+    margin-top: 0 !important;
+    margin-right: 0 !important;
+}
+
+.header-area .primary-menu > ul {
+    display: flex !important;
+    align-items: center !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    position: relative !important;
+    flex-wrap: nowrap !important;
+    gap: 12px !important;
+}
+
+.header-area .primary-menu > ul > li {
+    display: inline-flex !important;
+    align-items: center !important;
+    padding-bottom: 0 !important;
+    vertical-align: middle !important;
+}
+
+.header-area .primary-menu > ul > li + li {
+    margin-left: 10px !important;
+}
+
+.header-area .primary-menu > ul > li > a {
+    font-size: 14.5px !important;
+    font-weight: 600 !important;
+    color: #ffffff !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    font-family: Helvetica, Arial, sans-serif !important;
+    line-height: 1 !important;
+    letter-spacing: 0.3px !important;
+    transition: color 0.2s ease, transform 0.2s ease !important;
+}
+
+.header-area .primary-menu > ul > li:hover > a {
+    color: #c9a84c !important;
+}
+
+.header-area .header-middle .row > [class*="col-"]:last-child {
+    flex: 0 0 auto !important;
+    width: auto !important;
+    max-width: none !important;
+}
+
+.header-area .biolife-cart-info {
+    margin-top: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+}
+
+@media (min-width: 992px) {
+    .header-area .header-middle .row > [class*="col-"]:last-child {
+        display: none !important;
+    }
+}
+
+@media (max-width: 991px) {
+    .header-area .biolife-logo img {
+        height: 40px !important;
+        max-height: 40px !important;
+    }
+    .header-area .header-middle {
+        padding: 5px 0 !important;
+    }
+    .header-area .biolife-cart-info {
+        margin-top: 0 !important;
+    }
+}
+
+.biolife-sticky-object.pre-sticky.is-sticky {
+    top: 0 !important;
+    padding: 6px 0 !important;
+}
+
+.biolife-sticky-object.pre-sticky .primary-menu {
+    margin-top: 0 !important;
+}
