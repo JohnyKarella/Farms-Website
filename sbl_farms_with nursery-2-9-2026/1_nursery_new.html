@@ -44,7 +44,7 @@
     <link rel="stylesheet" href="assets/customs/css/animations.css">
     <link rel="stylesheet" href="assets/customs/css/reels.css">
 
-    <link rel="stylesheet" href="nursery_categories/assets/nursery_new.css?v=2">
+    <link rel="stylesheet" href="nursery_categories/assets/nursery_new.css?v=4">
 
     <link rel="stylesheet" href="assets/customs/css/contact.css">
     <link rel="stylesheet" href="assets/css/font-awesome.min.css">
@@ -313,23 +313,6 @@
 
                     <!-- Product Grid -->
                     <main>
-
-                        <!-- Active Category Header & Enquiry Bar -->
-                        <div class="category-header-bar" id="categoryHeaderBar">
-                            <div class="cat-header-info">
-                                <span class="cat-parent-badge" id="catParentBadge">CREEPERS</span>
-                                <h3 class="cat-title-text" id="catTitleText">Leaf Creeper</h3>
-                                <span class="cat-count-badge" id="catCountBadge">Varieties</span>
-                            </div>
-                            <div class="cat-header-actions">
-                                <a href="contact.html" class="cat-enquire-btn" id="catEnquiryBtn">
-                                    <i class="fa fa-envelope"></i> Enquire Now
-                                </a>
-                                <a href="https://wa.me/919900001972" target="_blank" class="cat-whatsapp-btn" id="catWhatsappBtn">
-                                    <i class="fa fa-whatsapp"></i> WhatsApp Enquiry
-                                </a>
-                            </div>
-                        </div>
 
                         <div class="catalog-grid" id="catalogGrid">
 
@@ -4956,14 +4939,6 @@
                         <h3 id="modalName"></h3>
                         <div class="modal-category" id="modalCategory"></div>
                         <p class="modal-desc" id="modalDesc"></p>
-                        <div class="modal-actions" id="modalActions">
-                            <a href="https://wa.me/919900001972" target="_blank" class="modal-btn-whatsapp" id="modalWhatsappBtn">
-                                <i class="fa fa-whatsapp"></i> Enquire on WhatsApp
-                            </a>
-                            <a href="contact.html" class="modal-btn-enquire" id="modalEnquiryBtn">
-                                <i class="fa fa-envelope"></i> Send Web Enquiry
-                            </a>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -4975,7 +4950,12 @@
 
     </div>
 
-    <br>
+    <!-- Single Enquiry Button (After All Plants in that image place) -->
+    <div class="plants-enquiry-container">
+        <a href="contact.html" class="single-plant-enquire-btn" id="catalogSingleEnquireBtn">
+            <i class="fa fa-envelope" style="margin-right: 8px;"></i>Enquire Now
+        </a>
+    </div>
 
     <!-- FOOTER -->
     <footer id="footer">
@@ -5180,7 +5160,7 @@
     <script src="assets/customs/js/reels.js"></script>
 
 
-    <script src="nursery_categories/assets/nursery_new.js?v=2"></script>
+    <script src="nursery_categories/assets/nursery_new.js?v=4"></script>
 
 </body>
 

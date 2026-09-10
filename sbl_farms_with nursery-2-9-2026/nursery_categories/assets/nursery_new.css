@@ -447,236 +447,61 @@
 }
 
 /* ============================================================
-   CATEGORY HEADER BAR & ENQUIRY BUTTONS
+   SINGLE ENQUIRY BUTTON (AFTER ALL PLANTS BEFORE FOOTER)
    ============================================================ */
 
-.category-header-bar {
-  background: var(--card-bg);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 16px 20px;
-  margin-bottom: 20px;
+.plants-enquiry-container {
   display: flex;
+  justify-content: center;
   align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 12px;
-  box-shadow: 0 4px 16px rgba(31, 77, 58, 0.05);
+  padding: 45px 20px 55px;
+  background: #ffffff;
+  clear: both;
+  width: 100%;
 }
 
-.cat-header-info {
-  display: flex;
+.single-plant-enquire-btn {
+  display: inline-flex;
   align-items: center;
-  flex-wrap: wrap;
+  justify-content: center;
   gap: 10px;
-}
-
-.cat-parent-badge {
-  background: var(--green-soft);
-  color: var(--green-deep);
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.8px;
-  text-transform: uppercase;
-  padding: 4px 10px;
-  border-radius: 6px;
-  border: 1px solid rgba(31, 77, 58, 0.15);
-}
-
-.cat-title-text {
-  margin: 0;
-  font-size: 1.25rem;
-  font-weight: 700;
-  color: var(--green-deep);
-  line-height: 1.2;
-}
-
-.cat-count-badge {
-  background: rgba(199, 154, 61, 0.12);
-  color: var(--gold);
-  font-size: 12px;
-  font-weight: 700;
-  padding: 3px 10px;
-  border-radius: 12px;
-}
-
-.cat-header-actions {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  flex-wrap: wrap;
-}
-
-.cat-enquire-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-  background: var(--green-deep);
+  background: var(--green-deep, #1f4d3a);
   color: #ffffff !important;
-  padding: 8px 18px;
-  border-radius: 25px;
-  font-size: 13px;
-  font-weight: 600;
-  text-decoration: none;
-  transition: background 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
-  box-shadow: 0 4px 12px rgba(31, 77, 58, 0.2);
-}
-
-.cat-enquire-btn:hover {
-  background: var(--gold);
-  color: #ffffff !important;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(199, 154, 61, 0.3);
-}
-
-.cat-whatsapp-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-  background: #25D366;
-  color: #ffffff !important;
-  padding: 8px 16px;
-  border-radius: 25px;
-  font-size: 13px;
-  font-weight: 600;
-  text-decoration: none;
-  transition: background 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
-  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.25);
-}
-
-.cat-whatsapp-btn:hover {
-  background: #20ba5a;
-  color: #ffffff !important;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(37, 211, 102, 0.35);
-}
-
-/* ---------- Plant Card Action Row ---------- */
-.plant-card .card-actions {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 8px;
-  margin-top: 10px;
-  padding-top: 8px;
-  border-top: 1px dashed rgba(31, 77, 58, 0.12);
-}
-
-.plant-card .card-actions .view-more {
-  margin-top: 0;
-  font-size: 12px;
+  font-size: 16px;
   font-weight: 700;
-  color: var(--gold);
-  letter-spacing: 0.3px;
-  transition: color 0.15s ease;
-}
-
-.plant-card:hover .card-actions .view-more {
-  color: var(--green-deep);
-}
-
-.plant-card .card-enquire-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  background: var(--green-deep);
-  color: #ffffff;
-  padding: 5px 12px;
-  border-radius: 20px;
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.3px;
-  text-decoration: none;
-  border: none;
+  letter-spacing: 0.5px;
+  padding: 15px 46px;
+  border-radius: 35px;
+  text-decoration: none !important;
+  box-shadow: 0 6px 20px rgba(31, 77, 58, 0.22);
+  transition: all 0.25s ease;
   cursor: pointer;
-  transition: background 0.2s ease, transform 0.15s ease;
 }
 
-.plant-card .card-enquire-btn:hover {
-  background: var(--gold);
-  color: #ffffff;
-  transform: scale(1.05);
-}
-
-/* ---------- Modal Actions ---------- */
-.plant-modal .modal-actions {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-top: 22px;
-  padding-top: 18px;
-  border-top: 1px solid var(--border);
-  flex-wrap: wrap;
-}
-
-.modal-btn-whatsapp {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: #25D366;
-  color: #ffffff !important;
-  padding: 10px 20px;
-  border-radius: 30px;
-  font-size: 14px;
-  font-weight: 600;
-  text-decoration: none;
-  transition: background 0.2s ease, transform 0.15s ease;
-  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.25);
-}
-
-.modal-btn-whatsapp:hover {
-  background: #1eb857;
+.single-plant-enquire-btn:hover {
+  background: var(--gold, #c79a3d);
   color: #ffffff !important;
   transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(199, 154, 61, 0.35);
 }
 
-.modal-btn-enquire {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: var(--green-deep);
-  color: #ffffff !important;
-  padding: 10px 20px;
-  border-radius: 30px;
-  font-size: 14px;
-  font-weight: 600;
-  text-decoration: none;
-  transition: background 0.2s ease, transform 0.15s ease;
-  box-shadow: 0 4px 12px rgba(31, 77, 58, 0.2);
+.single-plant-enquire-btn:active {
+  transform: translateY(0);
 }
 
-.modal-btn-enquire:hover {
-  background: var(--gold);
-  color: #ffffff !important;
-  transform: translateY(-2px);
+.single-plant-enquire-btn i {
+  font-size: 16px;
 }
 
-@media (max-width: 600px) {
-  .category-header-bar {
-    flex-direction: column;
-    align-items: stretch;
+@media (max-width: 480px) {
+  .plants-enquiry-container {
+    padding: 30px 16px 40px;
   }
 
-  .cat-header-actions {
-    display: flex;
-    flex-direction: column;
+  .single-plant-enquire-btn {
     width: 100%;
-  }
-
-  .cat-enquire-btn,
-  .cat-whatsapp-btn {
-    justify-content: center;
-    width: 100%;
-  }
-
-  .plant-modal .modal-actions {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .modal-btn-whatsapp,
-  .modal-btn-enquire {
-    justify-content: center;
-    width: 100%;
+    max-width: 320px;
+    padding: 13px 24px;
+    font-size: 15px;
   }
 }
