@@ -9,8 +9,6 @@
   var categoryToggles = Array.prototype.slice.call(document.querySelectorAll('.category-toggle'));
   var subButtons = Array.prototype.slice.call(document.querySelectorAll('.sub-btn'));
 
-  var singleEnquireBtn = document.getElementById('catalogSingleEnquireBtn');
-
   /* ---------- Category dropdown (accordion): only one open at a time ---------- */
   function openCategory(item) {
     categoryItems.forEach(function (ci) {
@@ -48,10 +46,7 @@
       b.classList.toggle('active', b === activeBtn);
     });
 
-    // Update the single bottom enquiry button with current category
-    if (singleEnquireBtn && name) {
-      singleEnquireBtn.href = 'contact.html?category=' + encodeURIComponent(name);
-    }
+
   }
 
   subButtons.forEach(function (btn) {
