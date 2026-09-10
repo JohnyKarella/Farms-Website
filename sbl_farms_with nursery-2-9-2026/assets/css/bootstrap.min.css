@@ -25,19 +25,22 @@ body {
 }
 
 article,
-aside,
 details,
 figcaption,
 footer,
 header,
 hgroup,
-main,
 menu,
 nav,
 section,
 summary {
     display: block;
     background-color: #2e4b2d;
+}
+
+aside,
+main {
+    display: block;
 }
 
 
