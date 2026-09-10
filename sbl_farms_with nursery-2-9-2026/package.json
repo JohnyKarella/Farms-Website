@@ -1,0 +1,9 @@
+{
+  "name": "sbl-farms-website",
+  "private": true,
+  "version": "1.0.0",
+  "description": "SBL Farms website and enquiry backend",
+  "scripts": {
+    "start": "python backend/server.py"
+  }
+}

@@ -1,0 +1,563 @@
+/* Banner and Gallery */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0
+}
+
+:root {
+    --bg: #f7f3ec;
+    --green: #2c5c2e;
+    --green-dark: #1a3a1c;
+    --gold: #b8964a;
+    --text: #2a2a2a;
+    --text-light: #6b6b5e;
+}
+
+
+
+/* ══════════════════════════════════════
+   BANNER SLIDER — shrinks + parallax on scroll
+══════════════════════════════════════ */
+.banner-section {
+    position: relative;
+    /* initial height, will shrink via JS */
+    height: 660px;
+    min-height: 420px;
+    overflow: hidden;
+    border-radius: 0px 0px 40px 40px;
+    /* we don't clip inner children so parallax bg can peek */
+}
+
+/* ── sticky shrink wrapper ── */
+.banner-sticky {
+    position: sticky;
+    top: 0;
+    height: 960px;
+    min-height: 420px;
+    overflow: hidden;
+    transition: border-radius .3s, margin .3s, width .3s;
+}
+
+/* ── slides container ── */
+.slides-wrap {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+}
+
+.slide {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity .9s ease;
+}
+
+.slide.active {
+    opacity: 1;
+    z-index: 1
+}
+
+/* parallax image inside each slide */
+.slide-bg {
+    position: absolute;
+    inset: -15%;
+    /* oversized so parallax has room */
+    background-size: cover;
+    background-position: center;
+    will-change: transform;
+    transition: transform .05s linear;
+}
+
+/* dark overlay */
+.slide::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    background: #5c5c5c21;
+}
+
+/* ── slide content ── */
+.slide-content {
+    position: absolute;
+    bottom: 35%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+    text-align: center;
+    width: 90%;
+    max-width: 700px;
+    color: #fff;
+    opacity: 0;
+    transform: translateX(-50%) translateY(30px);
+    transition: opacity .7s ease .3s, transform .7s ease .3s;
+}
+
+.slide.active .slide-content {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
+.slide-content .eyebrow {
+    font-size: 11px;
+    letter-spacing: 3.5px;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 500;
+    margin-bottom: 14px;
+    opacity: .85;
+}
+
+.slide-content h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 5vw, 3.8rem);
+    font-weight: 600;
+    line-height: 1.15;
+    text-shadow: 0 3px 20px rgba(0, 0, 0, .4);
+    margin-bottom: 32px;
+    color: #ffffff;
+}
+
+.slide-content .cta-btn {
+    display: inline-block;
+    padding: 14px 44px;
+    border: 1.5px solid var(--gold);
+    color: #fff;
+    background: #e6e6e696;
+    text-decoration: none;
+    font-size: 10px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    font-weight: 600;
+    border-radius: 30px;
+    transition: background .25s, color .25s;
+}
+
+.slide-content .cta-btn:hover {
+    background: var(--gold);
+    color: var(--green-dark)
+}
+
+/* ── ARROWS ── */
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, .12);
+    border: 1.5px solid rgba(255, 255, 255, .3);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    transition: background .2s, border-color .2s;
+    backdrop-filter: blur(4px);
+}
+
+.arrow:hover {
+    background: rgba(255, 255, 255, .22);
+    border-color: rgba(255, 255, 255, .6)
+}
+
+.arrow svg {
+    width: 18px;
+    height: 18px;
+    stroke: currentColor;
+    fill: none;
+    stroke-width: 2
+}
+
+.arrow-left {
+    left: 28px
+}
+
+.arrow-right {
+    right: 28px
+}
+
+/* ── DOTS ── */
+.slide-dots {
+    position: absolute;
+    bottom: 28px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.sdot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    border: 1.5px solid rgba(255, 255, 255, .5);
+    background: transparent;
+    cursor: pointer;
+    transition: background .3s, transform .3s, border-color .3s;
+}
+
+.sdot.active {
+    background: var(--gold);
+    border-color: var(--gold);
+    transform: scale(1.3)
+}
+
+/* ── progress bar ── */
+.slide-progress {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    height: 3px;
+    background: rgba(255, 255, 255, .1);
+}
+
+.slide-progress-fill {
+    height: 100%;
+    background: var(--gold);
+    width: 0%;
+    transition: width linear;
+}
+
+/* shrink pill effect on scroll */
+.banner-sticky.shrunk {
+    border-radius: 20px;
+    margin: 0 20px;
+    width: calc(100% - 40px);
+}
+
+
+
+
+
+/* ══════════════════════════════════════
+  GALLERY section
+══════════════════════════════════════ */
+.after-section {
+    background: var(--bg);
+    padding: 80px 0;
+    position: relative;
+    z-index: 2;
+}
+
+.container_gallery {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 40px;
+    margin-left: -80px;
+}
+
+
+/* Desktop Adjustment */
+@media (min-width: 1024px) {
+    .container_gallery {
+        padding: 0 40px;
+        /* Applying your specific offset only when there is room */
+        margin-left: -80px;
+    }
+}
+
+/* Optional: Reset margin-left if it hits the screen edge */
+@media (max-width: 1560px) {
+    .container_gallery {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+
+.eyebrow {
+    font-size: 11px;
+    letter-spacing: 3.5px;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 500;
+    margin-bottom: 14px;
+    text-align: center
+}
+
+.section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    text-align: center;
+    color: var(--green-dark);
+    font-weight: 600;
+    margin-bottom: 16px
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: var(--gold);
+    margin: 14px auto 0;
+    border-radius: 2px
+}
+
+.section-sub {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto 56px;
+    font-size: .95rem;
+    line-height: 1.8;
+    color: var(--text-light);
+    font-weight: 300
+}
+
+/* gallery mosaic */
+.mosaic {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 220px;
+    gap: 12px;
+}
+
+.mosaic-item {
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    opacity: 0;
+    transform: scale(.96);
+    transition: opacity .5s ease, transform .5s ease;
+}
+
+.mosaic-item.visible {
+    opacity: 1;
+    transform: scale(1)
+}
+
+.mosaic-item.tall {
+    grid-row: span 2
+}
+
+.mosaic-item.wide {
+    grid-column: span 2
+}
+
+.mosaic-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform .6s ease
+}
+
+.mosaic-item:hover img {
+    transform: scale(1.06)
+}
+
+.mosaic-item::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(26, 58, 28, .4) 0%, transparent 50%);
+    opacity: 0;
+    transition: opacity .3s
+}
+
+.mosaic-item:hover::after {
+    opacity: 1
+}
+
+/* ── LIGHTBOX ── */
+.lightbox {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, .92);
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    backdrop-filter: blur(6px)
+}
+
+.lightbox.open {
+    display: flex
+}
+
+.lightbox img {
+    max-width: 90vw;
+    max-height: 85vh;
+    object-fit: contain;
+    border-radius: 8px;
+    animation: fadeIn .3s ease
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(.96)
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1)
+    }
+}
+
+.lb-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, .3);
+    background: none;
+    cursor: pointer;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background .2s
+}
+
+.lb-close:hover {
+    background: rgba(255, 255, 255, .1)
+}
+
+.lb-close svg {
+    width: 20px;
+    height: 20px;
+    stroke: currentColor;
+    fill: none;
+    stroke-width: 2
+}
+
+.lb-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, .08);
+    border: 1px solid rgba(255, 255, 255, .2);
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    cursor: pointer;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background .2s;
+    backdrop-filter: blur(4px)
+}
+
+.lb-arrow:hover {
+    background: rgba(255, 255, 255, .15)
+}
+
+.lb-arrow svg {
+    width: 20px;
+    height: 20px;
+    stroke: currentColor;
+    fill: none;
+    stroke-width: 2
+}
+
+.lb-prev {
+    left: 20px
+}
+
+.lb-next {
+    right: 20px
+}
+
+@media(max-width:768px) {
+    .mosaic {
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: 180px
+    }
+
+    .mosaic-item.wide {
+        grid-column: span 1
+    }
+
+    .arrow {
+        display: none
+    }
+
+    /* ── Banner mobile sizing ── */
+    .banner-section {
+        height: 420px;
+        min-height: 280px;
+        border-radius: 0 0 24px 24px;
+    }
+
+    .banner-sticky {
+        height: 560px;
+        min-height: 280px;
+        transition: border-radius .3s, margin .3s, width .3s, height .3s;
+    }
+
+    /* Shrink pill on mobile */
+    .banner-sticky.shrunk {
+        border-radius: 16px;
+        margin: 0 12px;
+        width: calc(100% - 24px);
+        height: 240px;
+    }
+
+    .slide-content {
+        bottom: 20%;
+        width: 90%;
+    }
+
+    .slide-content h2 {
+        font-size: clamp(1.4rem, 5vw, 2rem);
+        margin-bottom: 20px;
+    }
+
+    .slide-content .cta-btn {
+        padding: 11px 30px;
+        font-size: 9px;
+    }
+
+    .slide-dots {
+        bottom: 16px;
+    }
+}
+
+@media(max-width:480px) {
+    .container {
+        padding: 0 20px
+    }
+
+    .mosaic {
+        grid-template-columns: 1fr 1fr;
+        grid-auto-rows: 160px
+    }
+
+    .mosaic-item.tall {
+        grid-row: span 1
+    }
+
+    /* Banner extra small */
+    .banner-section {
+        height: 340px;
+        min-height: 240px;
+    }
+
+    .banner-sticky {
+        height: 460px;
+        min-height: 240px;
+    }
+
+    .banner-sticky.shrunk {
+        height: 200px;
+        margin: 0 10px;
+        width: calc(100% - 20px);
+    }
+}

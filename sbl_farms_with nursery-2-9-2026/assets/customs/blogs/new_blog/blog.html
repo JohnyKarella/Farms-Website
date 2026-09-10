@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SBL Farms Blog — Stories from the Land</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Lato:wght@300;400;700&family=Dancing+Script:wght@600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="blog.css" />
+</head>
+<body>
+  <nav class="topnav" id="topnav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo"><span class="logo-leaf">🌿</span><span class="logo-text">SBL <strong>Farms</strong></span></a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="nursery.html">Nursery</a></li>
+        <li><a href="Dairy.html">Dairy</a></li>
+        <li><a href="agritour.html">Agritour</a></li>
+        <li><a href="greenwall.html">Greenwall</a></li>
+        <li><a href="#" class="nav-active">Blog</a></li>
+        <li><a href="contact.html" class="nav-cta">Visit Us</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <header class="blog-hero">
+    <div class="hero-img-wrap">
+      <img src="https://images.unsplash.com/photo-1500595046743-cd271d694d30?w=1600&q=85&auto=format&fit=crop" alt="SBL Farms fields at sunrise" class="hero-img" loading="eager" />
+      <div class="hero-overlay"></div>
+    </div>
+    <div class="hero-content">
+      <span class="hero-eyebrow">SBL Farms · Bangalore</span>
+      <h1 class="hero-title">Stories from<br /><em>the Land</em></h1>
+      <p class="hero-sub">Fresh insights on sustainable farming, nursery care, dairy life and agri-tourism from our 50-acre working farm near Bangalore.</p>
+      <a href="#featured" class="hero-btn">Explore Stories ↓</a>
+    </div>
+    <div class="hero-scroll-indicator"><span></span></div>
+  </header>
+
+  <section class="category-strip">
+    <div class="container">
+      <div class="pills-wrap">
+        <button class="pill active" data-filter="all">All Posts</button>
+        <button class="pill" data-filter="nursery">🌱 Nursery</button>
+        <button class="pill" data-filter="dairy">🥛 Dairy</button>
+        <button class="pill" data-filter="agritour">🚜 Agritour</button>
+        <button class="pill" data-filter="greenwall">🍃 Greenwall</button>
+        <button class="pill" data-filter="tips">💡 Farm Tips</button>
+        <button class="pill" data-filter="recipes">🍽 Recipes</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="featured-section" id="featured">
+    <div class="container">
+      <div class="section-label">✦ Featured Story</div>
+      <article class="featured-card" data-cat="agritour">
+        <div class="featured-img-col">
+          <div class="featured-img-wrap">
+            <img src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=900&q=85&auto=format&fit=crop" alt="Sunrise over SBL Farms" loading="lazy" />
+            <span class="featured-badge">Featured</span>
+          </div>
+        </div>
+        <div class="featured-content-col">
+          <div class="post-meta">
+            <span class="cat-tag agritour">Agritour</span>
+            <span class="post-date">June 12, 2025</span>
+            <span class="read-time">8 min read</span>
+          </div>
+          <h2 class="featured-title">A Day in the Life: What Happens When 200 School Children Visit Our Farm</h2>
+          <p class="featured-excerpt">Every weekend, groups of curious young minds pour through our gates — and the farm comes alive in ways we never expected. From milking sessions at dawn to harvesting tomatoes they'll take home for dinner, discover how SBL Farms' Agritour program is quietly reshaping urban children's relationship with food, soil, and the natural world.</p>
+          <p class="featured-excerpt">This particular Saturday began at 6:30 AM when the first bus rolled in carrying 48 students from Indiranagar. Within minutes, the silence of the farm had transformed into laughter, questions, and the irresistible pull of mud. Our head farmer, Ravi, guided them through the paddy fields while our dairy team set up the milking demonstration that never fails to produce expressions of wide-eyed wonder.</p>
+          <div class="featured-stats">
+            <div class="stat"><strong>200+</strong><span>Visitors weekly</span></div>
+            <div class="stat"><strong>50</strong><span>Acres explored</span></div>
+            <div class="stat"><strong>12</strong><span>Activity zones</span></div>
+          </div>
+          <a href="#" class="read-more-btn">Read Full Story →</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <main class="main-layout">
+    <div class="container">
+      <div class="content-sidebar-grid">
+        <div class="articles-col">
+          <div class="section-label">Recent Posts</div>
+          <div class="articles-grid" id="articlesGrid">
+
+            <article class="post-card" data-cat="nursery">
+              <div class="card-img-wrap">
+                <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=700&q=80&auto=format&fit=crop" alt="Nursery plants in bloom" loading="lazy" />
+                <span class="card-cat nursery">Nursery</span>
+              </div>
+              <div class="card-body">
+                <div class="card-meta"><span class="post-date">May 28, 2025</span> · <span class="read-time">5 min</span></div>
+                <h3 class="card-title">50 Rare Tropical Plants Now at Our Nursery — Perfect for Bangalore Balconies</h3>
+                <p class="card-excerpt">Our latest collection features rare aroids, philodendrons, and flowering tropicals that thrive in Bangalore's climate. Care tips, placement ideas, and why urban greenery is more than decoration.</p>
+                <a href="#" class="card-link">Continue Reading →</a>
+              </div>
+            </article>
+
+            <article class="post-card" data-cat="dairy">
+              <div class="card-img-wrap">
+                <img src="https://images.unsplash.com/photo-1550583724-b2692b85b150?w=700&q=80&auto=format&fit=crop" alt="Fresh dairy farm milk" loading="lazy" />
+                <span class="card-cat dairy">Dairy</span>
+              </div>
+              <div class="card-body">
+                <div class="card-meta"><span class="post-date">May 15, 2025</span> · <span class="read-time">6 min</span></div>
+                <h3 class="card-title">From Grass to Glass: How Our Gir Cows Produce the Creamiest A2 Milk</h3>
+                <p class="card-excerpt">Our herd of 60 Gir cows roam freely across 8 acres of lush pasture. We trace a single bottle from morning milking through our processing unit to your doorstep — often within 4 hours.</p>
+                <a href="#" class="card-link">Continue Reading →</a>
+              </div>
+            </article>
+
+            <article class="post-card post-card--wide" data-cat="greenwall">
+              <div class="card-img-wrap">
+                <img src="https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?w=1000&q=80&auto=format&fit=crop" alt="Living green wall" loading="lazy" />
+                <span class="card-cat greenwall">Greenwall</span>
+              </div>
+              <div class="card-body">
+                <div class="card-meta"><span class="post-date">May 3, 2025</span> · <span class="read-time">7 min</span></div>
+                <h3 class="card-title">How a 15-Metre Living Green Wall Transformed an IT Corridor Office — A Case Study</h3>
+                <p class="card-excerpt">When a leading tech firm approached us with 6 weeks and a blank concrete surface, we created a 15-metre living artwork of ferns, pothos, and peace lilies that reduced ambient noise by 18%, improved air quality scores, and became the most photographed spot in the building. We break down every decision — species selection, irrigation, structural support, and long-term maintenance planning.</p>
+                <a href="#" class="card-link">Read the Full Case Study →</a>
+              </div>
+            </article>
+
+            <article class="post-card" data-cat="tips">
+              <div class="card-img-wrap">
+                <img src="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=700&q=80&auto=format&fit=crop" alt="Composting on farm" loading="lazy" />
+                <span class="card-cat tips">Farm Tips</span>
+              </div>
+              <div class="card-body">
+                <div class="card-meta"><span class="post-date">April 22, 2025</span> · <span class="read-time">4 min</span></div>
+                <h3 class="card-title">Composting Done Right: Our 30-Day Kitchen-to-Farm Waste Cycle</h3>
+                <p class="card-excerpt">We process every scrap of organic matter — from dairy waste to leaf litter — into rich vermicompost that feeds our nursery beds. Here's our exact process, broken into daily steps anyone can adapt at home.</p>
+                <a href="#" class="card-link">Continue Reading →</a>
+              </div>
+            </article>
+
+            <article class="post-card" data-cat="nursery">
+              <div class="card-img-wrap">
+                <img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?w=700&q=80&auto=format&fit=crop" alt="Potted nursery plants" loading="lazy" />
+                <span class="card-cat nursery">Nursery</span>
+              </div>
+              <div class="card-body">
+                <div class="card-meta"><span class="post-date">April 10, 2025</span> · <span class="read-time">5 min</span></div>
+                <h3 class="card-title">Aquatic Plants 101: A Thriving Water Garden on Your Terrace</h3>
+                <p class="card-excerpt">You don't need a pond. A large ceramic pot, three aquatic plants, a handful of gravel, and our expert guidance creates a serene water garden that also deters mosquitoes naturally.</p>
+                <a href="#" class="card-link">Continue Reading →</a>
+              </div>
+            </article>
+
+            <article class="post-card" data-cat="recipes">
+              <div class="card-img-wrap">
+                <img src="https://images.unsplash.com/photo-1493770348161-369560ae357d?w=700&q=80&auto=format&fit=crop" alt="Fresh farm breakfast" loading="lazy" />
+                <span class="card-cat recipes">Recipes</span>
+              </div>
+              <div class="card-body">
+                <div class="card-meta"><span class="post-date">March 30, 2025</span> · <span class="read-time">6 min</span></div>
+                <h3 class="card-title">Farm Breakfast in 20 Minutes: Recipes Using Only What We Harvested This Morning</h3>
+                <p class="card-excerpt">Fresh tomatoes, free-range eggs, raw cow's milk, herbs from our kitchen garden. Our farm chef shares five quick breakfast recipes that taste like nothing you'll find in a restaurant.</p>
+                <a href="#" class="card-link">Continue Reading →</a>
+              </div>
+            </article>
+
+          </div>
+
+          <div class="photo-essay-strip">
+            <div class="section-label">Photo Essay</div>
+            <h2 class="strip-title">Seasons on the Farm — A Visual Diary</h2>
+            <p class="strip-intro">Our farm photographer spent twelve months documenting every corner of SBL Farms. Here are the moments that defined each season.</p>
+            <div class="photo-mosaic">
+              <div class="mosaic-item mosaic-tall">
+                <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=600&q=85&auto=format&fit=crop" alt="Golden wheat fields" loading="lazy" />
+                <div class="mosaic-caption">Winter harvest — December 2024</div>
+              </div>
+              <div class="mosaic-item">
+                <img src="https://images.unsplash.com/photo-1602491453631-e2a5ad90a131?w=500&q=80&auto=format&fit=crop" alt="Cows grazing" loading="lazy" />
+                <div class="mosaic-caption">Morning graze — March 2025</div>
+              </div>
+              <div class="mosaic-item">
+                <img src="https://images.unsplash.com/photo-1471193945509-9ad0617afabf?w=500&q=80&auto=format&fit=crop" alt="Colourful flowers" loading="lazy" />
+                <div class="mosaic-caption">Monsoon bloom — June 2025</div>
+              </div>
+              <div class="mosaic-item mosaic-wide">
+                <img src="https://images.unsplash.com/photo-1455619452474-d2be8b1e70cd?w=900&q=80&auto=format&fit=crop" alt="Fresh herbs" loading="lazy" />
+                <div class="mosaic-caption">Herb harvest — September 2024</div>
+              </div>
+              <div class="mosaic-item">
+                <img src="https://images.unsplash.com/photo-1560493676-04071c5f467b?w=500&q=80&auto=format&fit=crop" alt="Drone view" loading="lazy" />
+                <div class="mosaic-caption">Bird's eye — January 2025</div>
+              </div>
+              <div class="mosaic-item">
+                <img src="https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?w=500&q=80&auto=format&fit=crop" alt="Vegetable beds" loading="lazy" />
+                <div class="mosaic-caption">Summer beds — April 2025</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="section-label" style="margin-top:60px;">More from the Farm</div>
+          <div class="articles-grid">
+            <article class="post-card" data-cat="dairy">
+              <div class="card-img-wrap">
+                <img src="https://images.unsplash.com/photo-1563291589-2e7b4d1c5f0b?w=700&q=80&auto=format&fit=crop" alt="Dairy unit" loading="lazy" />
+                <span class="card-cat dairy">Dairy</span>
+              </div>
+              <div class="card-body">
+                <div class="card-meta"><span class="post-date">March 18, 2025</span> · <span class="read-time">5 min</span></div>
+                <h3 class="card-title">Inside Our Dairy Unit: Hygiene, Herd Health and Cold Chain Logistics</h3>
+                <p class="card-excerpt">A behind-the-scenes look at how our dairy maintains FSSAI compliance while keeping the product 100% natural and additive-free from farm to consumer.</p>
+                <a href="#" class="card-link">Continue Reading →</a>
+              </div>
+            </article>
+            <article class="post-card" data-cat="agritour">
+              <div class="card-img-wrap">
+                <img src="https://images.unsplash.com/photo-1542601906897-ecd908b3c3c7?w=700&q=80&auto=format&fit=crop" alt="Children planting" loading="lazy" />
+                <span class="card-cat agritour">Agritour</span>
+              </div>
+              <div class="card-body">
+                <div class="card-meta"><span class="post-date">March 5, 2025</span> · <span class="read-time">4 min</span></div>
+                <h3 class="card-title">Corporate Outings: Why 30 IT Companies Chose Our Farm Over a Resort</h3>
+                <p class="card-excerpt">Team cooking challenges, guided nature walks, planting sessions — our corporate packages offer something no boardroom can: genuine reconnection with nature and each other.</p>
+                <a href="#" class="card-link">Continue Reading →</a>
+              </div>
+            </article>
+            <article class="post-card" data-cat="tips">
+              <div class="card-img-wrap">
+                <img src="https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?w=700&q=80&auto=format&fit=crop" alt="Vegetable garden" loading="lazy" />
+                <span class="card-cat tips">Farm Tips</span>
+              </div>
+              <div class="card-body">
+                <div class="card-meta"><span class="post-date">February 20, 2025</span> · <span class="read-time">7 min</span></div>
+                <h3 class="card-title">Bangalore Kitchen Garden Guide: What to Plant Month by Month</h3>
+                <p class="card-excerpt">Bangalore's microclimate allows year-round kitchen gardening. Our head agronomist breaks down exactly which vegetables, herbs, and greens to sow each month.</p>
+                <a href="#" class="card-link">Continue Reading →</a>
+              </div>
+            </article>
+            <article class="post-card" data-cat="greenwall">
+              <div class="card-img-wrap">
+                <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=700&q=80&auto=format&fit=crop" alt="Vertical garden" loading="lazy" />
+                <span class="card-cat greenwall">Greenwall</span>
+              </div>
+              <div class="card-body">
+                <div class="card-meta"><span class="post-date">February 8, 2025</span> · <span class="read-time">5 min</span></div>
+                <h3 class="card-title">Vertical Gardens vs Potted Plants: Which Is Right for Your Bangalore Home?</h3>
+                <p class="card-excerpt">We compare cost, maintenance, air quality impact, and aesthetics side-by-side — helping you figure out which approach suits your space, budget, and lifestyle.</p>
+                <a href="#" class="card-link">Continue Reading →</a>
+              </div>
+            </article>
+          </div>
+
+          <div class="pagination">
+            <button class="page-btn active">1</button>
+            <button class="page-btn">2</button>
+            <button class="page-btn">3</button>
+            <button class="page-btn page-next">Next →</button>
+          </div>
+        </div>
+
+        <aside class="sidebar-col">
+          <div class="sidebar-widget widget-about">
+            <img src="https://images.unsplash.com/photo-1560493676-04071c5f467b?w=400&q=80&auto=format&fit=crop" alt="Aerial SBL Farms" class="about-img" loading="lazy" />
+            <h3 class="widget-title">About SBL Farms</h3>
+            <p>A 50-acre working farm nestled 45 km from Bangalore. We grow, raise, nurture — and share it all through our nursery, dairy, and agritour programs.</p>
+            <a href="index.html" class="widget-link">Explore the Farm →</a>
+          </div>
+
+          <div class="sidebar-widget widget-newsletter">
+            <div class="nl-icon">🌾</div>
+            <h3 class="widget-title">Farm Fresh Newsletter</h3>
+            <p>Weekly stories, seasonal tips, and exclusive farm updates — every Sunday morning.</p>
+            <form class="nl-form" onsubmit="handleNewsletterSubmit(event)">
+              <input type="email" placeholder="your@email.com" class="nl-input" required />
+              <button type="submit" class="nl-btn">Subscribe</button>
+            </form>
+            <p class="nl-note">No spam. Unsubscribe anytime.</p>
+          </div>
+
+          <div class="sidebar-widget widget-popular">
+            <h3 class="widget-title">Most Read Stories</h3>
+            <ul class="popular-list">
+              <li class="popular-item"><img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?w=120&q=70&auto=format&fit=crop" alt="" loading="lazy" /><div><a href="#">How to Grow a Balcony Garden in Bangalore</a><span>4.2k reads</span></div></li>
+              <li class="popular-item"><img src="https://images.unsplash.com/photo-1550583724-b2692b85b150?w=120&q=70&auto=format&fit=crop" alt="" loading="lazy" /><div><a href="#">A2 Milk vs Regular Milk: The Full Truth</a><span>3.8k reads</span></div></li>
+              <li class="popular-item"><img src="https://images.unsplash.com/photo-1542601906897-ecd908b3c3c7?w=120&q=70&auto=format&fit=crop" alt="" loading="lazy" /><div><a href="#">Best Agritour Experiences Near Bangalore</a><span>3.1k reads</span></div></li>
+              <li class="popular-item"><img src="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=120&q=70&auto=format&fit=crop" alt="" loading="lazy" /><div><a href="#">Zero-Waste Composting at Home</a><span>2.7k reads</span></div></li>
+              <li class="popular-item"><img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=120&q=70&auto=format&fit=crop" alt="" loading="lazy" /><div><a href="#">Office Green Walls: ROI Analysis</a><span>2.3k reads</span></div></li>
+            </ul>
+          </div>
+
+          <div class="sidebar-widget widget-gallery">
+            <h3 class="widget-title">Farm Gallery</h3>
+            <div class="mini-gallery">
+              <a href="#"><img src="https://images.unsplash.com/photo-1471193945509-9ad0617afabf?w=200&q=75&auto=format&fit=crop" alt="Farm flowers" loading="lazy" /></a>
+              <a href="#"><img src="https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?w=200&q=75&auto=format&fit=crop" alt="Vegetable garden" loading="lazy" /></a>
+              <a href="#"><img src="https://images.unsplash.com/photo-1602491453631-e2a5ad90a131?w=200&q=75&auto=format&fit=crop" alt="Cows grazing" loading="lazy" /></a>
+              <a href="#"><img src="https://images.unsplash.com/photo-1500595046743-cd271d694d30?w=200&q=75&auto=format&fit=crop" alt="Farm landscape" loading="lazy" /></a>
+              <a href="#"><img src="https://images.unsplash.com/photo-1455619452474-d2be8b1e70cd?w=200&q=75&auto=format&fit=crop" alt="Fresh herbs" loading="lazy" /></a>
+              <a href="#"><img src="https://images.unsplash.com/photo-1493770348161-369560ae357d?w=200&q=75&auto=format&fit=crop" alt="Farm breakfast" loading="lazy" /></a>
+            </div>
+          </div>
+
+          <div class="sidebar-widget widget-tags">
+            <h3 class="widget-title">Explore Tags</h3>
+            <div class="tags-cloud">
+              <a href="#" class="tag">Organic Farming</a><a href="#" class="tag">A2 Milk</a>
+              <a href="#" class="tag">Bangalore</a><a href="#" class="tag">Nursery</a>
+              <a href="#" class="tag">School Tours</a><a href="#" class="tag">Green Wall</a>
+              <a href="#" class="tag">Composting</a><a href="#" class="tag">Agritourism</a>
+              <a href="#" class="tag">Gir Cows</a><a href="#" class="tag">Kitchen Garden</a>
+              <a href="#" class="tag">Aquatic Plants</a><a href="#" class="tag">Sustainable</a>
+              <a href="#" class="tag">Biogas</a><a href="#" class="tag">Floriculture</a>
+            </div>
+          </div>
+
+          <div class="sidebar-widget widget-cta">
+            <img src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=400&q=80&auto=format&fit=crop" alt="Visit the farm" class="cta-bg-img" loading="lazy" />
+            <div class="cta-content">
+              <h3>Plan Your Visit</h3>
+              <p>Open weekends · 7AM – 5PM<br/>45 km from Bangalore City</p>
+              <a href="contact.html" class="cta-visit-btn">Book a Tour</a>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <div class="quote-strip">
+    <div class="container">
+      <blockquote class="pull-quote">
+        "The farm is where we remember that food has a story — and every story begins with a seed."
+        <cite>— Founder, SBL Farms</cite>
+      </blockquote>
+    </div>
+  </div>
+
+  <section class="full-newsletter">
+    <div class="fn-bg">
+      <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1600&q=80&auto=format&fit=crop" alt="Farm at golden hour" loading="lazy" />
+      <div class="fn-overlay"></div>
+    </div>
+    <div class="container fn-content">
+      <span class="fn-eyebrow">Join 8,000+ Farm Followers</span>
+      <h2 class="fn-title">Get Stories Straight from the Soil</h2>
+      <p class="fn-sub">Weekly farm diaries, planting guides, dairy updates and seasonal recipes — every Sunday, free.</p>
+      <form class="fn-form" onsubmit="handleNewsletterSubmit(event)">
+        <input type="text" placeholder="Your name" class="fn-input" />
+        <input type="email" placeholder="Your email address" class="fn-input" required />
+        <button type="submit" class="fn-btn">Subscribe Free →</button>
+      </form>
+    </div>
+  </section>
+
+  <footer class="blog-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <div class="footer-logo-row"><span class="logo-leaf">🌿</span><span class="logo-text">SBL <strong>Farms</strong></span></div>
+        <p>50 acres of living farmland near Bangalore.<br>Nursery · Dairy · Agritour · Greenwall · Events.</p>
+      </div>
+      <div class="footer-links-col"><h4>Explore</h4><ul><li><a href="nursery.html">Nursery</a></li><li><a href="Dairy.html">Dairy</a></li><li><a href="agritour.html">Agritour</a></li><li><a href="greenwall.html">Greenwall</a></li><li><a href="aquatic_plants.html">Aquatic Plants</a></li></ul></div>
+      <div class="footer-links-col"><h4>Blog</h4><ul><li><a href="#">Farm Tips</a></li><li><a href="#">Dairy Stories</a></li><li><a href="#">Nursery Guides</a></li><li><a href="#">Recipes</a></li><li><a href="#">Photo Essays</a></li></ul></div>
+      <div class="footer-links-col"><h4>Connect</h4><ul><li><a href="#">Instagram</a></li><li><a href="#">Facebook</a></li><li><a href="#">YouTube</a></li><li><a href="contact.html">Contact Us</a></li></ul><p class="footer-address">SBL Farms, Kanakapura Road,<br/>Bangalore Rural, Karnataka 562117</p></div>
+    </div>
+    <div class="footer-bottom"><div class="container footer-bottom-inner"><span>© 2025 SBL Farms. All rights reserved.</span><span>Made with 🌱 in Bangalore</span></div></div>
+  </footer>
+
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+  <script src="blog.js"></script>
+</body>
+</html>

@@ -18,12 +18,18 @@
     min-height: 74px !important;
     max-height: 74px !important;
     background-color: #2e4b2d !important;
-    border-bottom: 1px solid rgba(201, 168, 76, 0.25) !important;
+    border-bottom: none !important;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2) !important;
     z-index: 9999 !important;
     margin: 0 !important;
     padding: 0 !important;
     transition: all 0.3s ease !important;
+}
+
+/* Ensure no gap or line after header */
+.page-contain {
+    padding-top: 0 !important;
+    margin-top: 0 !important;
 }
 
 /* Inner Middle Wrapper */

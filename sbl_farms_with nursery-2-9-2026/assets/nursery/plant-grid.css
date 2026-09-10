@@ -1,0 +1,233 @@
+/* ============================================================
+   SWAMY NURSERY & FLORIST — PLANT GRID SECTION STYLES
+   Palette: deep green / leaf green / gold accent / cream
+   ============================================================ */
+
+.plant-grid-section {
+  --pg-deep-green: #1f4720;
+  --pg-leaf-green: #4a7c2c;
+  --pg-gold: #c9a227;
+  --pg-cream: #faf7ee;
+  --pg-ink: #23301f;
+  --pg-radius: 14px;
+
+  box-sizing: border-box;
+  width: 100%;
+  background: var(--pg-cream);
+  padding: 64px 24px;
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+.plant-grid-section *,
+.plant-grid-section *::before,
+.plant-grid-section *::after {
+  box-sizing: border-box;
+}
+
+.pg-container {
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+/* ---------- Heading ---------- */
+
+.pg-heading {
+  text-align: center;
+  max-width: 620px;
+  margin: 0 auto 44px;
+}
+
+.pg-eyebrow {
+  display: inline-block;
+  font-size: 12.5px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--pg-gold);
+  margin-bottom: 10px;
+}
+
+.pg-title {
+  font-size: clamp(28px, 4vw, 40px);
+  font-weight: 700;
+  color: var(--pg-deep-green);
+  margin: 0 0 12px;
+  line-height: 1.15;
+}
+
+.pg-subtitle {
+  font-size: 15.5px;
+  color: #5b6b53;
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* ---------- Grid: 4 columns x 4 rows ---------- */
+
+.pg-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 28px 24px;
+}
+
+.pg-card {
+  display: flex;
+  flex-direction: column;
+  background: #faf7ee;
+}
+
+/* ---------- Square image frame ---------- */
+
+.pg-frame {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: var(--pg-radius);
+  overflow: hidden;
+  text-decoration: none;
+  background: #e4e0cf;
+  box-shadow: 0 4px 14px rgba(31, 71, 32, 0.12);
+  outline-offset: 3px;
+}
+
+.pg-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.pg-frame:hover img,
+.pg-frame:focus-visible img {
+  transform: scale(1.08);
+}
+
+/* ---------- Hover overlay with description + button ---------- */
+
+.pg-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 18px;
+  background: linear-gradient(
+    to top,
+    rgba(20, 41, 18, 0.92) 0%,
+    rgba(20, 41, 18, 0.55) 45%,
+    rgba(20, 41, 18, 0) 78%
+  );
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+.pg-frame:hover .pg-overlay,
+.pg-frame:focus-visible .pg-overlay {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.pg-desc {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.5;
+  color: #f2f5ec;
+  /* Clamp to 1.5 lines worth of content on hover reveal */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  max-height: 2.25em;
+}
+
+.pg-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--pg-deep-green);
+  background: var(--pg-gold);
+  padding: 8px 14px;
+  border-radius: 999px;
+  transition: background 0.25s ease, transform 0.25s ease;
+}
+
+.pg-btn::after {
+  content: '\2192';
+  transition: transform 0.25s ease;
+}
+
+.pg-frame:hover .pg-btn,
+.pg-frame:focus-visible .pg-btn {
+  background: #e3bd3a;
+}
+
+.pg-frame:hover .pg-btn::after {
+  transform: translateX(3px);
+}
+
+/* ---------- Plant name below frame ---------- */
+
+.pg-name {
+  margin: 13px 0px 10px;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--pg-ink);
+  text-align: center;
+}
+
+/* ---------- Focus accessibility ---------- */
+
+.pg-frame:focus-visible {
+  outline: 3px solid var(--pg-leaf-green);
+}
+
+/* ---------- Responsive breakpoints ---------- */
+
+/* Tablets: 3 per row */
+@media (max-width: 1024px) {
+  .pg-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Large phones / small tablets: 2 per row */
+@media (max-width: 720px) {
+  .plant-grid-section {
+    padding: 48px 18px;
+  }
+  .pg-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px 16px;
+  }
+}
+
+/* Small phones: 1 per row */
+@media (max-width: 420px) {
+  .pg-grid {
+    grid-template-columns: 1fr;
+  }
+  .pg-title {
+    font-size: 26px;
+  }
+}
+
+/* Touch devices without hover: overlay stays hidden until plant-grid.js
+   adds .pg-active on first tap (second tap/tap on button then navigates) */
+@media (hover: none) {
+  .pg-frame.pg-active .pg-overlay {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .pg-frame.pg-active img {
+    transform: scale(1.03);
+  }
+}

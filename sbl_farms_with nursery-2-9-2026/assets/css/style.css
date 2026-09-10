@@ -168,7 +168,7 @@ select option {
 
 .nice-select .current {
     color: #000000;
-    display: inline-block;
+    display: block;
     padding: 0px 0;
 }
 
@@ -217,7 +217,6 @@ select option {
 .biolife-icon {
     /* use !important to prevent issues with browser extensions that change fonts */
     font-family: 'biolife', sans-serif !important;
-    speak: none;
     font-style: normal;
     font-weight: normal;
     font-variant: normal;
@@ -743,7 +742,7 @@ body {
 }
 
 .biolife-clone-wrap .megamenu-item li.menu-item>a {
-    display: inline-block;
+    display: block;
     line-height: 50px;
 }
 
@@ -836,7 +835,7 @@ body {
 }
 
 .biolife-panel>ul>li>a {
-    display: inline-block;
+    display: block;
     line-height: 50px;
     text-transform: capitalize;
     color: #333333;
@@ -913,7 +912,7 @@ body {
 
 .biolife-panel .mega-content {
     padding: 25px 0;
-    display: inline-block;
+    display: block;
     width: 100%;
 }
 
@@ -1047,7 +1046,6 @@ body {
 .header-top .top-bar .horizontal-menu {
     padding: 0;
     margin: 0;
-    display: inline-block;
     float: left;
 }
 
@@ -1104,7 +1102,7 @@ body {
 .header-top .right .nice-select {
     padding-left: 0;
     display: inline-block;
-    float: initial;
+    float: none;
 }
 
 .header-top .right .nice-select .list {
@@ -1113,7 +1111,7 @@ body {
 
 .header-top .top-bar .social-list {
     font-size: 0;
-    display: inline-block;
+    display: block;
     float: left;
     margin-right: 7px;
 }
@@ -1719,7 +1717,7 @@ body.open-mobile-search .header-area.layout-02 {
 }
 
 .biolife-cart-info .minicart-item .thumb {
-    display: inline-block;
+    display: block;
     width: 90px;
     float: left;
 }
@@ -1821,7 +1819,7 @@ body.open-mobile-search .header-area.layout-02 {
 
 .contain-product.style-widget .product-thumb {
     width: 82px;
-    display: inline-block;
+    display: block;
     float: left;
 }
 
@@ -2033,7 +2031,6 @@ body.open-mobile-search .header-area.layout-02 {
 }
 
 .biolife-cart-info .minicart-block .btn-control .btn {
-    display: inline-block;
     width: calc(50% - 8px);
     padding: 16px 10px 17px;
     float: left;
@@ -2177,7 +2174,7 @@ body.open-mobile-search .header-area.layout-02 {
 }
 
 .block-posts .block-post-item .thumb {
-    display: inline-block;
+    display: block;
     width: 100px;
     border: 0;
     float: left;
@@ -2245,7 +2242,6 @@ body.open-mobile-search .header-area.layout-02 {
     height: 2px;
     border: 0;
     display: inline-block;
-    float: left;
     clear: left;
     margin: 0 3px 3px 9px;
 }
@@ -2362,7 +2358,6 @@ body.open-mobile-search .header-area.layout-02 {
     width: 40px;
     text-align: left;
     display: inline-block;
-    float: left;
     line-height: 45px;
 }
 
@@ -2433,6 +2428,7 @@ body.open-mobile-search .header-area.layout-02 {
     -moz-transform: rotate(180deg);
     -ms-transform: rotate(180deg);
     -o-transform: rotate(180deg);
+    transform: rotate(180deg);
 }
 
 .biolife-vertical-menu.height-auto .vertical-category-block>.wrap-menu {
@@ -2621,7 +2617,7 @@ body.open-mobile-search .header-area.layout-02 {
 }
 
 .contain-product .product-thumb .labels>span {
-    display: inline-block;
+    display: block;
     float: left;
     clear: left;
     min-width: 54px;
@@ -2844,7 +2840,6 @@ body.open-mobile-search .header-area.layout-02 {
     list-style: none;
     display: inline-block;
     width: 25%;
-    float: left;
     text-align: center;
 }
 
@@ -2935,7 +2930,6 @@ body.open-mobile-search .header-area.layout-02 {
 }
 
 .header-search-bar.layout-01 {
-    display: inline-block;
     position: relative;
     float: left;
 }
@@ -3018,7 +3012,6 @@ body.open-mobile-search .header-area.layout-02 {
 }
 
 .header-area .live-info {
-    display: inline-block;
     max-width: calc(100% - 500px);
     float: right;
 }
@@ -3150,15 +3143,6 @@ body.open-mobile-search .header-area.layout-02 {
 
 .newsletter-block .form-content .input-text:-moz-placeholder {
     line-height: 24px;
-}
-
-@media screen and (min-color-index:0) and(-webkit-min-device-pixel-ratio:0) {
-    @media {
-        /*
-      Define here the CSS styles applied only to Safari browsers
-      (any version and any device)
-     */
-    }
 }
 
 .newsletter-block.layout-03 {
@@ -3569,7 +3553,6 @@ body.open-mobile-search .header-area.layout-02 {
 .contact-info-block.footer-layout li .biolife-icon {
     font-size: 22px;
     color: #ffffff;
-    display: inline-block;
     float: left;
     width: 36px;
     text-align: left;
@@ -3648,7 +3631,7 @@ body.open-mobile-search .header-area.layout-02 {
     color: #3d5145;
     font-size: 40px;
     line-height: 1;
-    display: inline-block;
+    display: block;
     float: left;
     width: 100px;
     height: 50px;
@@ -4038,7 +4021,6 @@ body:not(.open-overlay) .header-area.layout-01 {
 }
 
 .mobile-search .mobile-search-content .nice-select {
-    display: inline-block;
     float: left;
     border: 1px solid #e6e6e6;
     border-radius: 2px;
@@ -4059,7 +4041,6 @@ body:not(.open-overlay) .header-area.layout-01 {
     border-radius: 2px;
     padding: 12px 17px 12px;
     line-height: 20px;
-    display: inline-block;
     text-transform: uppercase;
     font-weight: 600;
 }
@@ -4274,7 +4255,6 @@ body.open-overlay #overlay {
     margin: 0 4px 0 0;
     font-size: 16px;
     color: #222222;
-    float: left;
 }
 
 .sidebar .price-filter .frm-contain .f-item:last-child {
@@ -4676,7 +4656,7 @@ body.open-overlay #overlay {
 .top-functions-area .flt-item .icon-for-mobile span {
     width: 3px;
     height: 3px;
-    display: inline-block;
+    display: block;
     float: left;
     clear: both;
     margin: 1px 0;
@@ -4693,7 +4673,6 @@ body.open-overlay #overlay {
 }
 
 .top-functions-area .flt-item .flt-title {
-    display: inline-block;
     font-size: 15px;
     color: #333333;
     float: left;
@@ -4725,7 +4704,6 @@ body.open-overlay #overlay {
 
 .top-functions-area .flt-item .selector-item {
     display: inline-block;
-    float: left;
 }
 
 .top-functions-area .flt-item .selector-item+.selector-item {
@@ -4742,7 +4720,6 @@ body.open-overlay #overlay {
     color: #888888;
     font-size: 20px;
     display: inline-block;
-    float: left;
     margin-left: 24px;
     margin-top: 5px;
 }
@@ -4837,7 +4814,7 @@ body.open-overlay #overlay {
 }
 
 .biolife-panigations-block.version-2 .result-count {
-    display: inline-block;
+    display: block;
     float: right;
     font-size: 0;
 }
@@ -4936,7 +4913,7 @@ body.open-overlay #overlay {
 
 .mobile-block-global .glb-item ul.inline li {
     list-style: none;
-    display: inline-block;
+    display: block;
     float: left;
 }
 
@@ -4950,7 +4927,6 @@ body.open-overlay #overlay {
 }
 
 .sumary-product .media {
-    display: inline-block;
     float: left;
     width: 38.462%;
 }
@@ -4984,7 +4960,6 @@ body.open-overlay #overlay {
 }
 
 .sumary-product .product-attribute {
-    display: inline-block;
     float: left;
     width: calc(100% - 38.462% - 270px);
     padding-left: 20px;
@@ -5637,7 +5612,6 @@ body.open-overlay #overlay {
 }
 
 .review-form-wrapper .form-row {
-    display: inline-block;
     float: left;
     width: 100%;
     margin-bottom: 20px;
@@ -5724,7 +5698,7 @@ body.open-overlay #overlay {
     font-size: 15px;
     line-height: 30px;
     color: #666666;
-    display: inline-block;
+    display: block;
     float: right;
 }
 
@@ -5985,7 +5959,6 @@ body.open-overlay #overlay {
 }
 
 .biolife-title-box.link-all .blog-link {
-    display: inline-block;
     float: right;
     font-size: 14px;
     color: #666666;
@@ -6041,7 +6014,6 @@ body.open-overlay #overlay {
 
 .rating .star-rating>span::before,
 .rating .star-rating::before {
-    display: inline-block;
     float: left;
     font-family: FontAwesome, sans-serif;
     content: "\f006\f006\f006\f006\f006";
@@ -6322,7 +6294,7 @@ body.open-overlay #overlay {
     line-height: 30px;
     color: #111111;
     font-weight: 700;
-    display: inline-block;
+    display: block;
     float: right;
 }
 
@@ -6646,7 +6618,7 @@ body.open-overlay #overlay {
 }
 
 .order-summary .title-block a {
-    display: inline-block;
+    display: block;
     float: right;
     font-size: 14px;
     color: #666666;
@@ -6799,7 +6771,7 @@ body.open-overlay #overlay {
 }
 
 .contact-info-container .addr-info .if-item .tie {
-    display: inline-block;
+    display: block;
     font-size: 15px;
     line-height: 20px;
     color: #222222;
@@ -7043,7 +7015,7 @@ body.open-overlay #overlay {
     font-size: 15px;
     line-height: 24px;
     color: #555555;
-    display: inline-block;
+    display: block;
     max-width: 503px;
     margin: 180px 0 0;
 }
@@ -7054,7 +7026,7 @@ body.open-overlay #overlay {
     font-size: 15px;
     line-height: 24px;
     color: #444444;
-    display: inline-block;
+    display: block;
     max-width: 503px;
     float: right;
     clear: both;
@@ -7103,14 +7075,14 @@ body.open-overlay #overlay {
 }
 
 .sc-left-position {
-    display: inline-block;
+    display: block;
     max-width: 330px;
     float: left;
     padding-top: 68px;
 }
 
 .sc-right-position {
-    display: inline-block;
+    display: block;
     max-width: 330px;
     float: right;
     padding-top: 68px;
@@ -7118,7 +7090,6 @@ body.open-overlay #overlay {
 
 .sc-center-position {
     width: 510px;
-    display: inline-block;
     margin-top: 110px;
     float: left;
     text-align: center;
@@ -7541,7 +7512,7 @@ body.open-overlay #overlay {
 }
 
 .single-post-contain .post-foot .auth-info .ath {
-    display: inline-block;
+    display: block;
     float: left;
     font-size: 15px;
     line-height: 30px;
@@ -7571,7 +7542,7 @@ body.open-overlay #overlay {
 }
 
 .single-post-contain .post-foot .socials-connection {
-    display: inline-block;
+    display: block;
     float: right;
     font-size: 0;
     line-height: 1;
@@ -7735,7 +7706,7 @@ body.open-overlay #overlay {
 
 .post-comments .wrap-post-comment .author-contact img {
     margin-right: 6px;
-    display: inline-block;
+    display: block;
     float: left;
 }
 
@@ -9456,7 +9427,7 @@ li.slick-current .slider-opt04__layout01 .buttons .btn {
 }
 
 .biolife-banner__promotion2 .text-content {
-    display: inline-block;
+    display: block;
     line-height: 1;
     float: right;
     max-width: 500px;
@@ -10302,7 +10273,7 @@ li.slick-current .slider-opt04__layout01 .buttons .btn {
 }
 
 .contain-product__right-info-layout3 .info .price {
-    display: inline-block;
+    display: block;
     max-width: 150px;
     text-align: right;
     float: right;
@@ -11422,7 +11393,7 @@ li.slick-current .slider-opt04__layout01 .buttons .btn {
 
 .grid-twice-item>li {
     list-style: none;
-    display: inline-block;
+    display: block;
     width: calc(50% - 8px);
     float: left;
     margin-left: 16px;
@@ -12554,8 +12525,10 @@ body.open-quickview-block .biolife-quickview-block {
     display: none !important;
 }
 
+
+
 .mobile-menu-toggle span {
-    display: inline-block;
+    display: block;
     width: 30px;
     height: 2px;
     background-color: #fff;
@@ -13036,7 +13009,7 @@ body.open-quickview-block .biolife-quickview-block {
 
     .top-functions-area .flt-item.group-on-mobile .selector-item::before {
         content: attr(data-title);
-        display: inline-block;
+        display: block;
         font-size: 15px;
         float: left;
     }
@@ -13239,13 +13212,13 @@ body.open-quickview-block .biolife-quickview-block {
     }
 
     .header-area.layout-01 .header-bottom .logo-for-mobile {
-        display: inline-block;
+        display: block;
         float: left;
         margin-top: 5px;
     }
 
     .header-area.layout-01 .header-bottom .biolife-cart-info {
-        display: inline-block;
+        display: block;
         margin-top: 0;
         float: right;
     }
@@ -15397,7 +15370,7 @@ body.open-quickview-block .biolife-quickview-block {
     .order-summary .cart-list .cart-item .info,
     .order-summary .cart-list .cart-item .price {
         width: calc(100% - 113px);
-        display: inline-block;
+        display: block;
         float: right;
         padding-top: 5px;
         padding-left: 10px;

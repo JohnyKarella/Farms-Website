@@ -1,0 +1,736 @@
+/* Tabs */
+
+:root {
+    --bg: #f7f3ec;
+    --bg2: #f0ebe0;
+    --white: #ffffff;
+    --green: #2c5c2e;
+    --green-dark: #1a3a1c;
+    --gold: #b8964a;
+    --border: rgba(184, 150, 74, .16);
+    --border-s: rgba(44, 92, 46, .07);
+    --text: #2a2a2a;
+    --text-s: #6b6b5e;
+    --shadow: rgba(26, 58, 28, .09);
+    --radius: 20px;
+}
+
+
+.diff-wrap input[type="radio"] {
+    display: none;
+}
+
+/* ─────────────────────────────────────
+   SECTION SHELL
+───────────────────────────────────── */
+.section-wrap {
+    padding: 50px 0 50px;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(180deg, #f2faf3 0%, #ffffff 50%, #f4fff6 100%);
+}
+
+.section-wrap::before {
+    content: '';
+    position: absolute;
+    top: -130px;
+    right: -130px;
+    width: 480px;
+    height: 480px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(74, 140, 63, .07) 0%, transparent 68%);
+    pointer-events: none;
+}
+
+.section-wrap::after {
+    content: '';
+    position: absolute;
+    bottom: -90px;
+    left: -90px;
+    width: 360px;
+    height: 360px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(184, 150, 74, .06) 0%, transparent 68%);
+    pointer-events: none;
+}
+
+.container_tabs {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 48px;
+    position: relative;
+    z-index: 1;
+}
+
+/* ── section header ── */
+.sec-header {
+    text-align: center;
+    margin-bottom: 56px;
+}
+
+.eyebrow {
+    display: block;
+    font-size: 10.5px;
+    letter-spacing: 3.5px;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 500;
+    margin-bottom: 14px;
+}
+
+.sec-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 4.5vw, 3rem);
+    color: var(--green-dark);
+    font-weight: 600;
+    line-height: 1.18;
+}
+
+.sec-title::after {
+    content: '';
+    display: block;
+    width: 56px;
+    height: 3px;
+    background: var(--gold);
+    border-radius: 2px;
+    margin: 16px auto 0;
+}
+
+/* ─────────────────────────────────────
+   WRAPPER — inputs live here
+───────────────────────────────────── */
+.diff-wrap {
+    position: relative;
+}
+
+/* ─────────────────────────────────────
+   CARD SHELL
+───────────────────────────────────── */
+.diff-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: 0 12px 48px var(--shadow);
+    background: var(--white);
+    height: 620px;
+    /* fixed height — right side scrolls inside */
+}
+
+/* ─────────────────────────────────────
+   LEFT PANEL  (desktop only)
+───────────────────────────────────── */
+.diff-left {
+    background: var(--white);
+    border-right: 1px solid var(--border);
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+}
+
+/* gold top bar */
+.diff-left::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 40px;
+    width: 48px;
+    height: 3px;
+    background: var(--gold);
+    border-radius: 0 0 3px 3px;
+    z-index: 2;
+}
+
+/* each left-panel "slide" */
+.lc {
+    display: none;
+    /* hidden by default */
+    flex-direction: column;
+    padding: 44px 38px 40px;
+    height: 100%;
+    overflow: hidden;
+    animation: fadeIn .45s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ── image ── */
+.lc-img {
+    width: 100%;
+    height: 300px;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 5px;
+    flex-shrink: 0;
+    box-shadow: 0 6px 22px rgba(26, 58, 28, .10);
+}
+
+.lc-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* ── meta ── */
+.lc-meta {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 0px;
+}
+
+.lc-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: rgb(184 150 74 / 65%);
+    line-height: 1;
+}
+
+.lc-tag {
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 800;
+    padding: 4px 10px;
+    border: 1px solid rgba(184, 150, 74, .28);
+    border-radius: 20px;
+    background: rgba(184, 150, 74, .05);
+}
+
+/* ── title ── */
+.lc-title {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--green-dark);
+    line-height: 0.3;
+    margin-bottom: 5px;
+}
+
+.lc-divider {
+    width: 36px;
+    height: 2px;
+    background: var(--gold);
+    border-radius: 2px;
+    margin-bottom: 16px;
+    opacity: .45;
+}
+
+/* ── description — rich, 5+ lines ── */
+.lc-desc {
+    font-size: 14px;
+    line-height: 1.3;
+    color: #222222;
+    font-weight: 500;
+    flex: 1;
+}
+
+.lc-desc strong {
+    color: var(--green-dark);
+    font-weight: 500;
+}
+
+/* ─────────────────────────────────────
+   CSS MAGIC — show left panel by radio
+   (inputs are siblings of .diff-card
+    inside .diff-wrap)
+───────────────────────────────────── */
+#d1:checked~.diff-card .diff-left .lc:nth-child(1),
+#d2:checked~.diff-card .diff-left .lc:nth-child(2),
+#d3:checked~.diff-card .diff-left .lc:nth-child(3),
+#d4:checked~.diff-card .diff-left .lc:nth-child(4),
+#d5:checked~.diff-card .diff-left .lc:nth-child(5),
+#d6:checked~.diff-card .diff-left .lc:nth-child(6),
+#d7:checked~.diff-card .diff-left .lc:nth-child(7),
+#d8:checked~.diff-card .diff-left .lc:nth-child(8),
+#d9:checked~.diff-card .diff-left .lc:nth-child(9) {
+    display: flex;
+}
+
+/* ─────────────────────────────────────
+   RIGHT PANEL  — tabs
+───────────────────────────────────── */
+.diff-right {
+    display: flex;
+    flex-direction: column;
+    /* Fix the right panel to match the left panel height */
+    height: 620px;
+    overflow: hidden;
+}
+
+.right-hdr {
+    padding: 22px 28px 18px;
+    border-bottom: 1px solid var(--border-s);
+    flex-shrink: 0;
+    background: var(--white);
+}
+
+.right-hdr h3 {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--green-dark);
+    margin-bottom: 0px;
+}
+
+.right-hdr p {
+    font-size: 15px;
+    color: var(--text-s);
+    font-weight: 300;
+}
+
+/* scrollable tabs area — this is the key part */
+.tabs-scroll {
+    flex: 1;
+    overflow-y: scroll;
+    overscroll-behavior: contain;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(184, 150, 74, .3) rgba(240, 235, 224, .5);
+    /* subtle fade top/bottom to hint scrollability */
+    -webkit-mask-image: linear-gradient(to bottom,
+            transparent 0px,
+            black 18px,
+            black calc(100% - 18px),
+            transparent 100%);
+    mask-image: linear-gradient(to bottom,
+            transparent 0px,
+            black 18px,
+            black calc(100% - 18px),
+            transparent 100%);
+}
+
+.tabs-scroll::-webkit-scrollbar {
+    width: 5px;
+}
+
+.tabs-scroll::-webkit-scrollbar-track {
+    background: rgba(240, 235, 224, .5);
+    border-radius: 4px;
+}
+
+.tabs-scroll::-webkit-scrollbar-thumb {
+    background: rgba(184, 150, 74, .35);
+    border-radius: 4px;
+}
+
+.tabs-scroll::-webkit-scrollbar-thumb:hover {
+    background: rgba(184, 150, 74, .55);
+}
+
+/* ── label = clickable tab ── */
+.diff-right label {
+    display: block;
+    border-bottom: 1px solid var(--border-s);
+    cursor: pointer;
+    position: relative;
+    transition: background .18s;
+}
+
+.diff-right label:last-child {
+    border-bottom: none;
+}
+
+.diff-right label:hover {
+    background: #faf8f3;
+}
+
+/* active accent line */
+#d1:checked~.diff-card .diff-right label[for="d1"],
+#d2:checked~.diff-card .diff-right label[for="d2"],
+#d3:checked~.diff-card .diff-right label[for="d3"],
+#d4:checked~.diff-card .diff-right label[for="d4"],
+#d5:checked~.diff-card .diff-right label[for="d5"],
+#d6:checked~.diff-card .diff-right label[for="d6"],
+#d7:checked~.diff-card .diff-right label[for="d7"],
+#d8:checked~.diff-card .diff-right label[for="d8"],
+#d9:checked~.diff-card .diff-right label[for="d9"] {
+    background: #f6fffa;
+}
+
+#d1:checked~.diff-card .diff-right label[for="d1"]::before,
+#d2:checked~.diff-card .diff-right label[for="d2"]::before,
+#d3:checked~.diff-card .diff-right label[for="d3"]::before,
+#d4:checked~.diff-card .diff-right label[for="d4"]::before,
+#d5:checked~.diff-card .diff-right label[for="d5"]::before,
+#d6:checked~.diff-card .diff-right label[for="d6"]::before,
+#d7:checked~.diff-card .diff-right label[for="d7"]::before,
+#d8:checked~.diff-card .diff-right label[for="d8"]::before,
+#d9:checked~.diff-card .diff-right label[for="d9"]::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: var(--gold);
+    border-radius: 0 2px 2px 0;
+}
+
+/* ── tab header row ── */
+.tab-hd {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 17px 22px 17px 26px;
+    user-select: none;
+}
+
+.tab-ico {
+    width: 38px;
+    height: 38px;
+    border-radius: 9px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, rgba(44, 92, 46, .06), rgba(184, 150, 74, .08));
+    border: 1px solid var(--border-s);
+    transition: background .22s, border-color .22s;
+}
+
+#d1:checked~.diff-card label[for="d1"] .tab-ico,
+#d2:checked~.diff-card label[for="d2"] .tab-ico,
+#d3:checked~.diff-card label[for="d3"] .tab-ico,
+#d4:checked~.diff-card label[for="d4"] .tab-ico,
+#d5:checked~.diff-card label[for="d5"] .tab-ico,
+#d6:checked~.diff-card label[for="d6"] .tab-ico,
+#d7:checked~.diff-card label[for="d7"] .tab-ico,
+#d8:checked~.diff-card label[for="d8"] .tab-ico,
+#d9:checked~.diff-card label[for="d9"] .tab-ico {
+    background: linear-gradient(135deg, rgba(44, 92, 46, .12), rgba(184, 150, 74, .14));
+    border-color: rgba(184, 150, 74, .26);
+}
+
+.tab-ico svg {
+    width: 18px;
+    height: 18px;
+    fill: none;
+    stroke: var(--green);
+    stroke-width: 1.7;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.tab-lbl {
+    flex: 1;
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--text-s);
+    line-height: 1.3;
+    transition: color .18s;
+}
+
+#d1:checked~.diff-card label[for="d1"] .tab-lbl,
+#d2:checked~.diff-card label[for="d2"] .tab-lbl,
+#d3:checked~.diff-card label[for="d3"] .tab-lbl,
+#d4:checked~.diff-card label[for="d4"] .tab-lbl,
+#d5:checked~.diff-card label[for="d5"] .tab-lbl,
+#d6:checked~.diff-card label[for="d6"] .tab-lbl,
+#d7:checked~.diff-card label[for="d7"] .tab-lbl,
+#d8:checked~.diff-card label[for="d8"] .tab-lbl,
+#d9:checked~.diff-card label[for="d9"] .tab-lbl {
+    color: var(--green-dark);
+    font-weight: 600;
+}
+
+.tab-tog {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: background .22s, border-color .22s, transform .32s;
+}
+
+.tab-tog svg {
+    width: 12px;
+    height: 12px;
+    fill: none;
+    stroke: var(--text-s);
+    stroke-width: 2;
+    transition: stroke .22s;
+}
+
+#d1:checked~.diff-card label[for="d1"] .tab-tog,
+#d2:checked~.diff-card label[for="d2"] .tab-tog,
+#d3:checked~.diff-card label[for="d3"] .tab-tog,
+#d4:checked~.diff-card label[for="d4"] .tab-tog,
+#d5:checked~.diff-card label[for="d5"] .tab-tog,
+#d6:checked~.diff-card label[for="d6"] .tab-tog,
+#d7:checked~.diff-card label[for="d7"] .tab-tog,
+#d8:checked~.diff-card label[for="d8"] .tab-tog,
+#d9:checked~.diff-card label[for="d9"] .tab-tog {
+    background: var(--gold);
+    border-color: var(--gold);
+    transform: rotate(45deg);
+}
+
+#d1:checked~.diff-card label[for="d1"] .tab-tog svg,
+#d2:checked~.diff-card label[for="d2"] .tab-tog svg,
+#d3:checked~.diff-card label[for="d3"] .tab-tog svg,
+#d4:checked~.diff-card label[for="d4"] .tab-tog svg,
+#d5:checked~.diff-card label[for="d5"] .tab-tog svg,
+#d6:checked~.diff-card label[for="d6"] .tab-tog svg,
+#d7:checked~.diff-card label[for="d7"] .tab-tog svg,
+#d8:checked~.diff-card label[for="d8"] .tab-tog svg,
+#d9:checked~.diff-card label[for="d9"] .tab-tog svg {
+    stroke: #fff;
+}
+
+/* ── short description (visible desktop + mobile) ── */
+.tab-short {
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 22px 0 78px;
+    transition: max-height .38s cubic-bezier(.4, 0, .2, 1), padding .38s ease;
+}
+
+#d1:checked~.diff-card label[for="d1"] .tab-short,
+#d2:checked~.diff-card label[for="d2"] .tab-short,
+#d3:checked~.diff-card label[for="d3"] .tab-short,
+#d4:checked~.diff-card label[for="d4"] .tab-short,
+#d5:checked~.diff-card label[for="d5"] .tab-short,
+#d6:checked~.diff-card label[for="d6"] .tab-short,
+#d7:checked~.diff-card label[for="d7"] .tab-short,
+#d8:checked~.diff-card label[for="d8"] .tab-short,
+#d9:checked~.diff-card label[for="d9"] .tab-short {
+    max-height: 100px;
+    padding: 0 22px 18px 78px;
+}
+
+.tab-short p {
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--text-s);
+    font-weight: 700;
+}
+
+/* ─────────────────────────────────────
+   MOBILE INLINE CONTENT
+   (hidden on desktop, shown inside tab on mobile)
+───────────────────────────────────── */
+.tab-expand {
+    display: none;
+    /* hidden always on desktop */
+}
+
+/* ── footer ── */
+.right-ftr {
+    padding: 16px 26px;
+    border-top: 1px solid var(--border-s);
+    background: #faf8f3;
+    flex-shrink: 0;
+}
+
+.btn-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--green-dark);
+    border-bottom: 1.5px solid var(--gold);
+    padding-bottom: 2px;
+    transition: color .2s;
+}
+
+.btn-link:hover {
+    color: var(--gold);
+}
+
+.btn-link svg {
+    width: 13px;
+    height: 13px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    transition: transform .22s;
+}
+
+.btn-link:hover svg {
+    transform: translateX(4px);
+}
+
+/* ─────────────────────────────────────
+   MOBILE EXPAND  — image + full content
+   inside the tab itself
+───────────────────────────────────── */
+.mob-img {
+    width: 100%;
+    height: 190px;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 18px;
+    box-shadow: 0 4px 16px rgba(26, 58, 28, .09);
+}
+
+.mob-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.mob-meta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.mob-num {
+    font-size: 16px;
+    font-weight: 700;
+    color: rgb(184 150 74 / 82%);
+    line-height: 1;
+}
+
+.mob-tag {
+    font-size: 12px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 700;
+    padding: 3px 9px;
+    border: 1px solid rgba(184, 150, 74, .28);
+    border-radius: 20px;
+    background: rgba(184, 150, 74, .05);
+}
+
+.mob-title {
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--green-dark);
+    line-height: 1.3;
+    margin-bottom: 5px;
+}
+
+.mob-divider {
+    width: 32px;
+    height: 2px;
+    background: var(--gold);
+    border-radius: 2px;
+    margin-bottom: 14px;
+    opacity: .45;
+}
+
+.mob-desc {
+    font-size: 15px;
+    line-height: 1.3;
+    color: #474740;
+    font-weight: 600;
+}
+
+.mob-desc strong {
+    color: var(--green-dark);
+    font-weight: 500;
+}
+
+/* ═══════════════════════════════════════
+   RESPONSIVE — MOBILE ≤ 900px
+═══════════════════════════════════════ */
+@media (max-width: 900px) {
+
+    /* stack to single column, auto height on mobile */
+    .diff-card {
+        grid-template-columns: 1fr;
+        height: auto;
+    }
+
+    /* hide desktop left panel entirely */
+    .diff-left {
+        display: none;
+    }
+
+    /* right panel: auto height on mobile */
+    .diff-right {
+        height: auto;
+    }
+
+    /* tabs-scroll: auto on mobile — page itself scrolls */
+    .tabs-scroll {
+        overflow-y: visible;
+        -webkit-mask-image: none;
+        mask-image: none;
+        height: auto;
+    }
+
+    /* show mobile expand block */
+    .tab-expand {
+        display: block;
+    }
+
+    /* hide short description on mobile */
+    .tab-short {
+        display: none !important;
+    }
+
+    /* expanded inline content — hidden by default */
+    .tab-expand-inner {
+        max-height: 0;
+        overflow: hidden;
+        padding: 0 20px;
+        transition: max-height .4s cubic-bezier(.4, 0, .2, 1), padding .4s ease;
+        background: #faf8f3;
+        border-top: 1px solid var(--border-s);
+    }
+
+    /* show on active */
+    #d1:checked~.diff-card label[for="d1"] .tab-expand-inner,
+    #d2:checked~.diff-card label[for="d2"] .tab-expand-inner,
+    #d3:checked~.diff-card label[for="d3"] .tab-expand-inner,
+    #d4:checked~.diff-card label[for="d4"] .tab-expand-inner,
+    #d5:checked~.diff-card label[for="d5"] .tab-expand-inner,
+    #d6:checked~.diff-card label[for="d6"] .tab-expand-inner,
+    #d7:checked~.diff-card label[for="d7"] .tab-expand-inner,
+    #d8:checked~.diff-card label[for="d8"] .tab-expand-inner,
+    #d9:checked~.diff-card label[for="d9"] .tab-expand-inner {
+        max-height: 900px;
+        padding: 22px 20px 24px;
+    }
+
+    .container {
+        padding: 0 20px;
+    }
+
+    .section-wrap {
+        padding: 20px 0 20px;
+    }
+}
+
+@media (max-width: 540px) {
+    .tab-hd {
+        padding: 15px 16px 15px 18px;
+    }
+
+    .container {
+        padding: 0 14px;
+    }
+}
+
+
+
+
+
+
+
+
+/* Button */

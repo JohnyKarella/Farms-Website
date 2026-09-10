@@ -1,0 +1,889 @@
+/* ABOUT us */
+
+.label {
+    text-align: center;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--green-light);
+    font-weight: 500;
+    margin-bottom: 18px;
+}
+
+h2 {
+    /* font-family: 'Playfair Display', serif; */
+    font-size: 30px;
+    font-weight: 700;
+    text-align: center;
+    color: #000;
+    line-height: 1.2;
+    margin-bottom: 5px;
+}
+
+.description {
+    max-width: 700px;
+    margin: 0 auto 70px;
+    text-align: center;
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #555;
+    font-weight: 300;
+}
+
+.description strong {
+    color: var(--green-dark);
+    font-weight: 500;
+}
+
+/* Decorative leaf divider */
+.divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.divider::before,
+.divider::after {
+    content: '';
+    flex: 1;
+    max-width: 120px;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--gold));
+}
+
+.divider::after {
+    background: linear-gradient(to left, transparent, var(--gold));
+}
+
+.divider svg {
+    width: 24px;
+    height: 24px;
+    fill: var(--gold);
+}
+
+/* Stats grid */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    max-width: 900px;
+    margin: 0 auto;
+    gap: 0;
+    border-top: 1px solid rgba(42, 90, 39, 0.15);
+    border-bottom: 1px solid rgba(42, 90, 39, 0.15);
+}
+
+.stat-item {
+    text-align: center;
+    padding: 50px 20px;
+    position: relative;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.stat-item.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.stat-item:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 25%;
+    height: 50%;
+    width: 1px;
+    background: rgba(42, 90, 39, 0.15);
+}
+
+.stat-number {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.2rem, 4vw, 3.5rem);
+    color: var(--green-dark);
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 12px;
+    display: block;
+}
+
+.stat-number .plus {
+    color: var(--gold);
+}
+
+.stat-label {
+    font-size: 10px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: #888;
+    font-weight: 500;
+    line-height: 1.4;
+}
+
+/* Background texture */
+section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    /* background:
+        radial-gradient(ellipse 60% 40% at 50% 100%, rgba(74, 138, 62, 0.06) 0%, transparent 70%),
+        url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='30' cy='30' r='1' fill='%232d5a27' opacity='0.04'/%3E%3C/svg%3E"); */
+    pointer-events: none;
+}
+
+.container_about {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* Counter animation */
+.count-up {
+    display: inline;
+}
+
+@media (max-width: 768px) {
+
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .stat-item:nth-child(2)::after {
+        display: none;
+    }
+
+    .stat-item:nth-child(1),
+    .stat-item:nth-child(2) {
+        border-bottom: 1px solid rgba(42, 90, 39, 0.15);
+    }
+}
+
+@media (max-width: 480px) {
+    .stats-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .stat-item {
+        padding: 36px 12px;
+    }
+}
+
+
+
+
+
+
+
+/* ICONS */
+.contain-product.icons_dogs {
+    display: inline-block;
+    width: 100%;
+    height: 260px;
+    background-color: #3d51450f;
+    border-radius: 80px 80px 80px 0px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ─── RESET ─── */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --bg: #f7f3ec;
+    --bg-soft: #f0ebe0;
+    --white: #ffffff;
+    --green: #2c5c2e;
+    --green-dark: #1a3a1c;
+    --green-light: #4a8c3f;
+    --gold: #b8964a;
+    --gold-pale: rgba(184, 150, 74, .12);
+    --border: rgba(184, 150, 74, .18);
+    --text: #2a2a2a;
+    --text-soft: #6b6b5e;
+    --shadow: rgba(26, 58, 28, .08);
+}
+
+
+/* ════════════════════════════════
+   SECTION
+════════════════════════════════ */
+.section-wrap {
+    padding: 90px 0 80px;
+    position: relative;
+    overflow: hidden;
+    background:
+        url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='30' cy='30' r='1' fill='%232c5c2e' opacity='0.032'/%3E%3C/svg%3E"),
+        linear-gradient(155deg, #f0ebe0 0%, #f7f3ec 50%, #ede8dc 100%);
+}
+
+.section-wrap::before {
+    content: '';
+    position: absolute;
+    top: -140px;
+    right: -120px;
+    width: 480px;
+    height: 480px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(74, 140, 63, .07) 0%, transparent 68%);
+    pointer-events: none;
+}
+
+.section-wrap::after {
+    content: '';
+    position: absolute;
+    bottom: -80px;
+    left: -80px;
+    width: 360px;
+    height: 360px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(184, 150, 74, .06) 0%, transparent 68%);
+    pointer-events: none;
+}
+
+.container_greenwall {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 48px;
+    position: relative;
+    z-index: 1;
+}
+
+/* ── Header ── */
+.sec-header {
+    text-align: center;
+    margin-bottom: 56px;
+}
+
+.eyebrow {
+    display: inline-block;
+    font-size: 10.5px;
+    letter-spacing: 3.5px;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 500;
+    margin-bottom: 14px;
+}
+
+.sec-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.9rem, 4vw, 2.9rem);
+    color: var(--green-dark);
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+.sec-title::after {
+    content: '';
+    display: block;
+    width: 52px;
+    height: 3px;
+    background: var(--gold);
+    border-radius: 2px;
+    margin: 14px auto 0;
+}
+
+/* ════════════════════════════════
+   SLIDER SHELL
+════════════════════════════════ */
+.slider-shell {
+    position: relative;
+}
+
+/* fade edges */
+.slider-shell::before,
+.slider-shell::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 80px;
+    z-index: 3;
+    pointer-events: none;
+}
+
+.slider-shell::before {
+    left: 0;
+    background: linear-gradient(to right, var(--bg) 0%, transparent 100%);
+}
+
+.slider-shell::after {
+    right: 0;
+    background: linear-gradient(to left, var(--bg) 0%, transparent 100%);
+}
+
+/* ── VIEWPORT: clips overflow ── */
+.slider-viewport {
+    overflow: hidden;
+    border-radius: 16px;
+    margin: 0 4px;
+    /* pause CSS animation on hover */
+    --playing: running;
+}
+
+.slider-viewport.paused {
+    --playing: paused;
+}
+
+/* ── TRACK ── */
+.slider-track {
+    display: flex;
+    gap: 20px;
+    width: max-content;
+    /* CSS-only infinite scroll animation */
+    animation: scrollTrack var(--duration, 28s) linear infinite var(--playing, running);
+    cursor: grab;
+}
+
+.slider-track:active {
+    cursor: grabbing;
+}
+
+@keyframes scrollTrack {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(var(--scroll-width, -50%));
+    }
+}
+
+
+
+
+/* ── CARD ── */
+.icon-card {
+    flex: 0 0 var(--card-w, 200px);
+    width: var(--card-w, 200px);
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 20px 20px 20px;
+    text-align: center;
+    box-shadow: 0 4px 20px var(--shadow);
+    /* transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease; */
+    user-select: none;
+}
+
+/* .icon-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 14px 36px rgba(26, 58, 28, .13);
+    border-color: rgba(184, 150, 74, .35);
+} */
+
+.card-icon-wrap {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, rgba(44, 92, 46, .09), rgba(184, 150, 74, .12));
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 18px;
+    /* transition: background .3s, transform .3s; */
+}
+
+/* .icon-card:hover .card-icon-wrap {
+    background: linear-gradient(135deg, rgba(44, 92, 46, .18), rgba(184, 150, 74, .22));
+    transform: scale(1.08) rotate(5deg);
+} */
+
+.card-icon-wrap svg {
+    width: 30px;
+    height: 30px;
+    fill: none;
+    stroke: var(--green);
+    stroke-width: 1.7;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    transition: stroke .3s;
+}
+
+.icon-card:hover .card-icon-wrap svg {
+    stroke: var(--green-dark);
+}
+
+.card-name {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--green-dark);
+    line-height: 1.35;
+    margin-bottom: 6px;
+}
+
+.card-sub {
+    font-size: .75rem;
+    font-weight: 300;
+    color: var(--text-soft);
+    line-height: 1.5;
+}
+
+/* gold dot accent */
+.card-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--gold);
+    opacity: .5;
+    margin: 12px auto 0;
+    transition: opacity .3s, transform .3s;
+}
+
+.icon-card:hover .card-dot {
+    opacity: 1;
+    transform: scale(1.4);
+}
+
+/* ════════════════════════════════
+   CONTROLS
+════════════════════════════════ */
+.controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 40px;
+}
+
+.ctrl-btn {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 1.5px solid var(--border);
+    background: var(--white);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--green-dark);
+    box-shadow: 0 2px 10px var(--shadow);
+    transition: background .22s, border-color .22s, box-shadow .22s;
+}
+
+.ctrl-btn:hover {
+    background: var(--green);
+    border-color: var(--green);
+    color: #fff;
+    box-shadow: 0 6px 20px rgba(26, 58, 28, .18);
+}
+
+.ctrl-btn svg {
+    width: 17px;
+    height: 17px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+}
+
+/* pause/play */
+.ctrl-play {
+    position: relative;
+}
+
+.ctrl-play .icon-play,
+.ctrl-play .icon-pause {
+    transition: opacity .2s;
+}
+
+.ctrl-play .icon-play {
+    position: absolute;
+    opacity: 0;
+}
+
+.ctrl-play .icon-pause {
+    opacity: 1;
+}
+
+.ctrl-play.is-paused .icon-play {
+    opacity: 1;
+}
+
+.ctrl-play.is-paused .icon-pause {
+    opacity: 0;
+}
+
+/* dots */
+.dot-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.sdot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(44, 92, 46, .15);
+    cursor: pointer;
+    transition: background .3s, transform .3s;
+    border: none;
+    padding: 0;
+}
+
+.sdot.active {
+    background: var(--gold);
+    transform: scale(1.35);
+}
+
+/* ── pause badge ── */
+.pause-badge {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    background: rgba(26, 58, 28, .7);
+    color: #fff;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 5px 12px;
+    border-radius: 20px;
+    backdrop-filter: blur(4px);
+    opacity: 0;
+    transform: translateY(-4px);
+    transition: opacity .25s, transform .25s;
+    pointer-events: none;
+    z-index: 4;
+}
+
+.slider-shell.hovered .pause-badge {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ════════════════════════════════
+   RESPONSIVE
+════════════════════════════════ */
+
+/* Desktop: 5 cards visible → card width = (viewport - gaps) / 5 */
+/* We set via JS, but as a base: */
+.slider-viewport {
+    --card-w: 200px;
+}
+
+@media (max-width: 960px) {
+    .container {
+        padding: 0 28px;
+    }
+
+    .section-wrap {
+        padding: 70px 0 64px;
+    }
+
+    .slider-shell::before,
+    .slider-shell::after {
+        width: 40px;
+    }
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 0 16px;
+    }
+
+    .section-wrap {
+        padding: 56px 0 52px;
+    }
+
+    /* 2 cards visible on mobile */
+    .slider-viewport {
+        --card-w: 150px;
+    }
+
+    .icon-card {
+        padding: 24px 14px 20px;
+    }
+
+    .card-icon-wrap {
+        width: 110px;
+        height: 110px;
+    }
+
+    .card-icon-wrap svg {
+        width: 24px;
+        height: 24px;
+    }
+
+    .card-name {
+        font-size: 16px;
+    }
+
+    .card-sub {
+        font-size: .7rem;
+    }
+
+    .slider-shell::before,
+    .slider-shell::after {
+        width: 24px;
+    }
+
+    .ctrl-btn {
+        width: 38px;
+        height: 38px;
+    }
+}
+
+
+
+
+
+
+
+
+
+/* MEET */
+:root {
+    --bg: #f0ece2;
+    --green: #2c4a2e;
+    --green-mid: #3d6b40;
+    --gold: #b8964a;
+    --text: #3a3a2e;
+    --text-soft: #7a7a68;
+    --divider: rgba(100, 110, 80, .18);
+    --icon-bg: #e8e3d8;
+}
+
+/* ─── SECTION ─── */
+.diff-section {
+    background: #f4fff9;
+    padding: 0;
+    margin-top: 20px;
+}
+
+/* horizontal rule top & bottom of the whole section */
+.diff-section .top-rule,
+.diff-section .bottom-rule {
+    height: 1px;
+    background: var(--divider);
+    width: 100%;
+}
+
+/* ─── THE GRID ─── */
+.diff-grid {
+    display: grid;
+    /* 2 equal columns with a 1px divider in the middle */
+    grid-template-columns: 1fr 1px 1fr;
+    grid-template-rows: auto 1px auto;
+}
+
+
+
+
+
+/* ── vertical divider column ── */
+.v-divider {
+    grid-row: 1 / 4;
+    grid-column: 2;
+    background: var(--divider);
+    width: 1px;
+    justify-self: center;
+}
+
+/* ── horizontal divider row ── */
+.h-divider {
+    grid-column: 1 / 4;
+    grid-row: 2;
+    height: 1px;
+    background: var(--divider);
+}
+
+/* ─── CELL BASE ─── */
+.cell {
+    padding: 56px 52px;
+    display: flex;
+    align-items: flex-start;
+    gap: 28px;
+}
+
+/* ── LEFT cells: text RIGHT-aligned, icon on the right of text ── */
+/* layout: [text block] [icon] */
+.cell-left {
+    flex-direction: row;
+    justify-content: flex-end;
+    text-align: right;
+}
+
+.cell-left .cell-text {
+    order: 1;
+    text-align: right;
+}
+
+.cell-left .cell-icon {
+    order: 2;
+    flex-shrink: 0;
+}
+
+/* ── RIGHT cells: icon on left, text on right ── */
+/* layout: [icon] [text block] */
+.cell-right {
+    flex-direction: row;
+    text-align: left;
+}
+
+.cell-right .cell-icon {
+    flex-shrink: 0;
+}
+
+.cell-right .cell-text {
+    text-align: left;
+}
+
+/* ── ICON BOX ── */
+.cell-icon {
+    width: 180px;
+    height: 90px;
+    background: #3d514514;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: background .3s, transform .3s;
+}
+
+.cell:hover .cell-icon {
+    background: #ddd8cc;
+    transform: scale(1.06);
+}
+
+.cell-icon svg {
+    width: 26px;
+    height: 26px;
+    fill: none;
+    stroke: var(--green);
+    stroke-width: 1.6;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    transition: stroke .3s;
+}
+
+.cell:hover .cell-icon svg {
+    stroke: var(--green-mid);
+}
+
+/* ── TEXT ── */
+.cell-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--green);
+    line-height: 1.25;
+    margin-bottom: 12px;
+    /* gold dot inside the title — pseudo on a span */
+}
+
+/* the gold bullet dot inside the title */
+.cell-title .dot {
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--gold);
+    vertical-align: middle;
+    margin: 0 1px;
+    position: relative;
+    top: -1px;
+}
+
+.cell-desc {
+    font-size: 15px;
+    line-height: 1.5;
+    color: #000;
+    font-weight: 700;
+    max-width: 350px;
+}
+
+/* left cells: push desc to fill naturally */
+.cell-left .cell-desc {
+    margin-left: auto;
+    /* push text-block right */
+}
+
+
+/* ══════════════════════════
+   RESPONSIVE
+══════════════════════════ */
+
+@media (max-width: 768px) {
+    /* 1. Reset the Grid to a single column */
+    .diff-grid {
+        display: flex; /* Switching to Flex makes stacking easier than overriding grid-rows */
+        flex-direction: column;
+    }
+
+    /* 2. Hide Dividers that don't fit the vertical flow */
+    .v-divider, 
+    .h-divider {
+        display: none;
+    }
+
+    /* 3. Reset all Cell positioning (Overriding the inline HTML styles) */
+    .cell {
+        grid-column: auto !important;
+        grid-row: auto !important;
+        width: 100%;
+        padding: 40px 24px;
+        /* Add a bottom border to separate cells instead of the grid divider */
+        border-bottom: 1px solid var(--divider);
+        
+        /* Ensure all icons are on the left for consistent mobile reading */
+        flex-direction: row !important; 
+        text-align: left !important;
+        justify-content: flex-start !important;
+        gap: 20px;
+    }
+
+    /* Remove border from the last item */
+    .cell:last-child {
+        border-bottom: none;
+    }
+
+    /* 4. Reset Text alignments for Left-aligned cells */
+    .cell-left .cell-text {
+        order: 2;
+        text-align: left;
+    }
+
+    .cell-left .cell-icon {
+        order: 1;
+    }
+
+    .cell-left .cell-desc,
+    .cell-right .cell-desc {
+        margin-left: 0;
+        max-width: 100%;
+    }
+
+    .cell-title {
+        font-size: 1.2rem;
+    }
+}
+
+/* Extra Small Mobile Adjustments */
+@media (max-width: 480px) {
+    .cell {
+        padding: 30px 20px;
+        gap: 15px;
+    }
+    
+    .cell-icon {
+        width: 90px;
+        height: 70px;
+    }
+}

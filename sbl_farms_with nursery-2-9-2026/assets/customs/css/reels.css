@@ -1,0 +1,474 @@
+/* footer */
+
+
+
+/* ══ FOOTER ══════════════════════════════════════════ */
+footer {
+    position: relative;
+    background: #2d4a2d;
+    overflow: hidden;
+    font-family: 'Jost', sans-serif;
+    color: #da0707;
+}
+
+/* ── canvas ── */
+#fc {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* ── grain overlay ── */
+footer::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("../images/banner/clg_banner/7.png");
+    opacity: .04;
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* ══ INNER ════════════════════════════════════════════ */
+.inner {
+    position: relative;
+    z-index: 2;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 64px 40px 0;
+}
+
+/* ── top row ── */
+.top-row {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: start;
+    gap: 48px;
+    padding-bottom: 0px;
+    border-bottom: 1px solid rgba(201, 168, 76, .15);
+}
+
+/* BRAND */
+.brand {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0px
+}
+
+.logo-lockup {
+    display: flex;
+    align-items: center;
+    gap: 16px
+}
+
+.logo-circle {
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+    border: 1.5px solid var(--gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(201, 168, 76, .08);
+    animation: halo 3.5s ease-in-out infinite;
+    flex-shrink: 0;
+}
+
+@keyframes halo {
+
+    0%,
+    100% {
+        box-shadow: 0 0 0 0 rgba(201, 168, 76, .25)
+    }
+
+    50% {
+        box-shadow: 0 0 0 12px rgba(201, 168, 76, 0)
+    }
+}
+
+.brand-text h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.45rem;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: .5px;
+    line-height: 1.1;
+}
+
+.brand-text h2 em {
+    color: var(--gold);
+    font-style: normal
+}
+
+.brand-text p {
+    font-size: .68rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-top: 3px;
+}
+
+.brand-desc {
+    font-size: 15px;
+    line-height: 1.85;
+    color: #fff;
+    max-width: 300px;
+}
+
+.divider-line {
+    width: 40px;
+    height: 1.5px;
+    background: linear-gradient(90deg, var(--gold), transparent);
+    border-radius: 2px;
+}
+
+/* CENTRE EMBLEM */
+.centre-emblem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+}
+
+.emblem-svg {
+    animation: spin-slow 30s linear infinite
+}
+
+@keyframes spin-slow {
+    to {
+        transform: rotate(360deg)
+    }
+}
+
+.since-badge {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: .8rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+    border: 1px solid rgba(201, 168, 76, .3);
+    padding: 5px 14px;
+    border-radius: 20px;
+    white-space: nowrap;
+}
+
+
+
+
+
+/* CONTACT */
+.contact-col {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: flex-end
+}
+
+.c-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    text-align: right;
+}
+
+.c-icon-wrap {
+    width: 34px;
+    height: 34px;
+    border-radius: 8px;
+    background: rgba(201, 168, 76, .1);
+    border: 1px solid rgba(201, 168, 76, .2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    flex-shrink: 0;
+    transition: background .3s, transform .3s;
+}
+
+.c-row:hover .c-icon-wrap {
+    background: var(--gold);
+    transform: scale(1.1) rotate(-5deg)
+}
+
+.c-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px
+}
+
+.c-label {
+    font-size: 14px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 800
+}
+
+.c-val {
+    font-size: 15px;
+    color: #fff;
+    line-height: 1.5
+}
+
+/* ── LINKS ROW ── */
+.links-row {
+    display: flex;
+    justify-content: center;
+    gap: 8px 0px;
+    flex-wrap: wrap;
+    padding: 0px 0;
+    border-bottom: 1px solid rgba(201, 168, 76, .1);
+}
+
+.links-row a {
+    text-decoration: none;
+    font-size: 12px;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+    color: #fff;
+    padding: 6px 15px;
+    border-radius: 40px;
+    border: 1px solid transparent;
+    transition: color .3s, border-color .3s, background .3s;
+}
+
+.links-row a:hover {
+    color: var(--gold);
+    border-color: rgba(201, 168, 76, .3);
+    background: rgba(201, 168, 76, .05);
+}
+
+.links-row .sep {
+    color: rgba(201, 168, 76, .2);
+    line-height: 2.2;
+    font-size: .9rem;
+    user-select: none
+}
+
+/* ── BOTTOM BAR ── */
+.bottom-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 14px;
+    padding: 22px 0;
+}
+
+.copy {
+    font-size: 11px;
+    color: #fff;
+}
+
+.copy span {
+    color: var(--gold)
+}
+
+.tagline-pill {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gold);
+}
+
+.pulse-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--gold);
+    animation: pulse-d 1.8s ease-in-out infinite;
+}
+
+@keyframes pulse-d {
+
+    0%,
+    100% {
+        opacity: 1;
+        transform: scale(1)
+    }
+
+    50% {
+        opacity: .3;
+        transform: scale(.6)
+    }
+}
+
+.socials {
+    display: flex;
+    gap: 8px
+}
+
+.soc {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 1px solid rgba(201, 168, 76, .25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--gold);
+    text-decoration: none;
+    transition: background .3s, transform .3s, border-color .3s;
+}
+
+.soc:hover {
+    background: var(--gold);
+    color: var(--bg);
+    transform: translateY(-3px);
+    border-color: var(--gold)
+}
+
+/* ── SCROLL TOP ── */
+#st {
+    position: fixed;
+    bottom: 26px;
+    right: 26px;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: var(--gold);
+    color: var(--bg2);
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity .3s, transform .3s;
+    z-index: 999;
+    box-shadow: 0 4px 18px rgba(201, 168, 76, .35);
+}
+
+#st.show {
+    opacity: 1;
+    transform: translateY(0)
+}
+
+#st:hover {
+    background: var(--gold2);
+    transform: translateY(-4px)
+}
+
+/* ══ RESPONSIVE ════════════════════════════════════════ */
+@media(max-width:860px) {
+    .top-row {
+        grid-template-columns: 1fr 1fr;
+        gap: 36px
+    }
+
+    .centre-emblem {
+        display: none
+    }
+
+    .contact-col {
+        align-items: flex-start
+    }
+
+    .c-row {
+        text-align: left
+    }
+}
+
+@media(max-width:520px) {
+    .top-row {
+        grid-template-columns: 1fr;
+        gap: 32px
+    }
+
+    .inner {
+        padding: 48px 24px 0
+    }
+
+    .bottom-bar {
+        flex-direction: column;
+        align-items: flex-start
+    }
+}
+
+
+
+
+
+
+
+
+/* cow */
+#adisseo-sprite {
+    width: 100px;
+    height: 55px;
+    background-image: url("http://blacknegative.com/skins/blacknegative/images/adisseo/sprite.png");
+
+    -webkit-animation: play .8s steps(20) infinite;
+    -moz-animation: play .8s steps(20) infinite;
+    -ms-animation: play .8s steps(20) infinite;
+    -o-animation: play .8s steps(20) infinite;
+    animation: play .8s steps(20) infinite;
+}
+
+@-webkit-keyframes play {
+    from {
+        background-position: 0px;
+    }
+
+    to {
+        background-position: -2000px;
+    }
+}
+
+@-moz-keyframes play {
+    from {
+        background-position: 0px;
+    }
+
+    to {
+        background-position: -2000px;
+    }
+}
+
+@-ms-keyframes play {
+    from {
+        background-position: 0px;
+    }
+
+    to {
+        background-position: -2000px;
+    }
+}
+
+@-o-keyframes play {
+    from {
+        background-position: 0px;
+    }
+
+    to {
+        background-position: -2000px;
+    }
+}
+
+@keyframes play {
+    from {
+        background-position: 0px;
+    }
+
+    to {
+        background-position: -2000px;
+    }
+}
+
+
+
+
+
+
+
+
+
+

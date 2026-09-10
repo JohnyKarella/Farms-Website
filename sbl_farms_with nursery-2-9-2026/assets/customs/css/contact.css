@@ -1,0 +1,996 @@
+/* Conatct */
+
+
+ul {
+    list-style: none
+}
+
+a {
+    text-decoration: none;
+    color: inherit
+}
+
+img {
+    max-width: 100%
+}
+
+button {
+    font-family: 'Cairo', sans-serif;
+    cursor: pointer
+}
+
+/* ── Brand tokens ── */
+:root {
+    --g: #5b886f;
+    --gd: #3b4f44;
+    --gl: #DCEDC8;
+    --gold: #C8962A;
+    --dark: #222222;
+    --mid: #666666;
+    --mute: #999999;
+    --bdr: #e0e4df;
+    --white: #ffffff;
+    --r: 10px;
+    --ease: cubic-bezier(.22, .61, .36, 1);
+}
+
+/* ════════════════════════════════════════════
+   HERO
+════════════════════════════════════════════ */
+.hero-section {
+    position: relative;
+    height: 210px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #2a3d30;
+}
+
+/* decorative SVG farm scene embedded directly in HTML via <img src="data:..."> — see HTML */
+.hero-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.38;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(160deg, rgba(30, 58, 38, .72) 0%, rgba(59, 79, 68, .55) 100%);
+}
+
+.hero-section .page-title {
+    position: relative;
+    z-index: 2;
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(26px, 5vw, 46px);
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: -.02em;
+    text-align: center;
+    text-shadow: 0 2px 18px rgba(0, 0, 0, .35);
+}
+
+/* ════════════════════════════════════════════
+   PAGE WRAPPER
+════════════════════════════════════════════ */
+.page-contain {
+    padding: 0 0 20px
+}
+
+.container {
+    width: 100%;
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 24px
+}
+
+/* SECTION TITLE */
+.biolife-title-box {
+    text-align: center;
+    margin-bottom: 0px
+}
+
+.biolife-title-box .main-title {
+    font-size: clamp(20px, 3vw, 30px);
+    font-weight: 700;
+    color: var(--dark);
+    line-height: 1.2;
+    margin-bottom: 14px;
+}
+
+.biolife-title-box .text-info {
+    font-size: 15px;
+    color: var(--mid);
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.8;
+}
+
+/* ════════════════════════════════════════════
+   TWO-COLUMN GRID
+════════════════════════════════════════════ */
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 36px;
+    align-items: start;
+}
+
+/* ════════════════════════════════════════════
+   LEFT — CONTACT INFO CARD
+════════════════════════════════════════════ */
+.contact-info-card {
+    background: var(--white);
+    border-radius: 18px;
+    padding: 36px 30px;
+    box-shadow: 0 6px 40px rgba(0, 0, 0, .07);
+}
+
+.contact-info-card .box-title {
+    font-size: 30px;
+    font-weight: 700;
+    color: var(--dark);
+    margin-bottom: 6px;
+}
+
+.contact-info-card .box-subtitle {
+    font-size: 18px;
+    color: var(--mid);
+    margin-bottom: 28px;
+}
+
+.addr-info li {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--bdr);
+}
+
+.addr-info li:last-child {
+    border-bottom: none
+}
+
+.addr-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: var(--gl);
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--gd);
+    font-size: 20px;
+}
+
+.addr-text .tie {
+    display: block;
+    font-size: 15px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .07em;
+    color: var(--g);
+    margin-bottom: 3px;
+}
+
+.addr-text .dsc {
+    font-size: 18px;
+    color: var(--dark);
+    line-height: 1.55
+}
+
+.addr-text a.dsc {
+    color: var(--gd)
+}
+
+.addr-text a.dsc:hover {
+    color: var(--g)
+}
+
+.social-row {
+    margin-top: 20px
+}
+
+.social-row .label {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--mute);
+    text-transform: uppercase;
+    letter-spacing: .07em;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.socials {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap
+}
+
+.socail-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--gl);
+    color: var(--gd);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    transition: background .25s, color .25s, transform .2s;
+}
+
+.socail-btn:hover {
+    background: var(--gd);
+    color: #fff;
+    transform: translateY(-2px)
+}
+
+.wrap-map {
+    margin-top: 26px;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1.5px solid var(--bdr);
+    line-height: 0;
+}
+
+.wrap-map iframe {
+    width: 100%;
+    height: 215px;
+    display: block;
+    border: 0
+}
+
+/* ════════════════════════════════════════════
+   RIGHT — BOOKING FORM CARD
+   Background: layered farm SVG art (inline)
+════════════════════════════════════════════ */
+.booking-card {
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 6px 40px rgba(0, 0, 0, .12);
+    position: relative;
+}
+
+/* The farm SVG background sits as an <img> in HTML; this wrapper clips it */
+.booking-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+.booking-bg-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: linear-gradient(148deg, rgb(239 215 162) 0%, rgb(244 213 141) 50%, rgb(255 247 206) 100%);
+}
+
+.booking-inner {
+    position: relative;
+    z-index: 2;
+    padding: 36px 30px;
+}
+
+.booking-inner .card-title {
+    font-size: 21px;
+    font-weight: 700;
+    color: var(--gd);
+    margin-bottom: 5px;
+}
+
+.booking-inner .card-sub {
+    font-size: 13.5px;
+    color: #000;
+    margin-bottom: 28px;
+}
+
+/* ── Step indicator ── */
+.step-indicator {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 30px
+}
+
+.step-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center
+}
+
+.step-circle {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: #fff;
+    border: 2.5px solid var(--bdr);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--mute);
+    flex-shrink: 0;
+    transition: all .3s var(--ease);
+}
+
+.step-circle.active {
+    background: var(--g);
+    border-color: var(--g);
+    color: #fff;
+    box-shadow: 0 0 0 4px rgba(91, 136, 111, .2)
+}
+
+.step-circle.done {
+    background: linear-gradient(181deg, var(--g), #8cc4a5);
+    border-color: #02803a;
+    color: #fff
+}
+
+.step-label {
+    font-size: 11px;
+    font-weight: 600;
+    color: #000;
+    margin-top: 5px;
+    text-align: center;
+    white-space: nowrap
+}
+
+.step-label.active {
+    color: #02873d
+}
+
+.step-label.done {
+    color: var(--gd)
+}
+
+.step-connector {
+    flex: 1;
+    height: 2.5px;
+    background: var(--bdr);
+    margin: 17px 4px 0;
+    border-radius: 2px;
+    transition: background .4s
+}
+
+.step-connector.done {
+    background: var(--gd)
+}
+
+/* ── Panels ── */
+.step-panel {
+    display: none
+}
+
+.step-panel.active {
+    display: block
+}
+
+/* ── Form rows ── */
+.form-row {
+    margin-bottom: 16px
+}
+
+.form-row label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--dark);
+    margin-bottom: 6px;
+}
+
+/* ── Inputs / selects / textarea ── */
+.txt-input,
+.txt-select,
+.txt-textarea {
+    display: block;
+    width: 100%;
+    height: 46px;
+    padding: 0 14px;
+    font-family: 'Cairo', sans-serif;
+    font-size: 14px;
+    color: #333;
+    background: #fff;
+    border: 1.5px solid var(--bdr);
+    border-radius: var(--r);
+    outline: none;
+    transition: border-color .25s, box-shadow .25s;
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+.txt-textarea {
+    height: auto;
+    min-height: 130px;
+    padding: 12px 14px;
+    resize: vertical
+}
+
+
+.txt-input:focus,
+.txt-select:focus,
+.txt-textarea:focus {
+    border-color: var(--g);
+    box-shadow: 0 0 0 3px rgba(91, 136, 111, .15);
+}
+
+/* ── Validation error state ── */
+.txt-input.invalid,
+.txt-select.invalid,
+.txt-textarea.invalid {
+    border-color: #e03131;
+}
+
+.txt-input.invalid:focus,
+.txt-select.invalid:focus,
+.txt-textarea.invalid:focus {
+    box-shadow: 0 0 0 3px rgba(224, 49, 49, .15);
+}
+
+.field-error {
+    display: none;
+    color: #e03131;
+    font-size: 12px;
+    font-weight: 600;
+    margin-top: 6px;
+}
+
+.field-error.show {
+    display: block;
+}
+
+/* select arrow */
+.select-wrap {
+    position: relative
+}
+
+.select-wrap::after {
+    content: '\f107';
+    font-family: FontAwesome;
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--mute);
+    pointer-events: none;
+    font-size: 16px;
+}
+
+/* date-time row */
+.date-time-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px
+}
+
+/* guest counter */
+.guest-row {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    border: 1.5px solid var(--bdr);
+    border-radius: var(--r);
+    overflow: hidden;
+    height: 46px;
+}
+
+.guest-btn {
+    width: 46px;
+    height: 100%;
+    flex-shrink: 0;
+    background: var(--gl);
+    border: none;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--gd);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background .2s;
+    line-height: 1;
+}
+
+.guest-btn:hover {
+    background: #b8dfa4
+}
+
+.guest-count {
+    flex: 1;
+    text-align: center;
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--dark)
+}
+
+/* ── Add-on checkboxes ── */
+.check-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px
+}
+
+.check-item {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    background: #fff;
+    border: 1.5px solid var(--bdr);
+    border-radius: var(--r);
+    padding: 10px 12px;
+    cursor: pointer;
+    transition: border-color .2s, background .2s;
+    font-size: 13px;
+    color: var(--dark);
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.check-item:hover {
+    border-color: var(--g);
+    background: rgba(91, 136, 111, .05)
+}
+
+.check-item.checked {
+    border-color: var(--g);
+    background: rgba(91, 136, 111, .09)
+}
+
+.check-box {
+    width: 19px;
+    height: 19px;
+    border-radius: 5px;
+    flex-shrink: 0;
+    border: 2px solid var(--bdr);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    color: transparent;
+    transition: all .2s;
+}
+
+.check-item.checked .check-box {
+    background: var(--g);
+    border-color: var(--g);
+    color: #fff
+}
+
+/* ── Nav buttons ── */
+.form-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 22px;
+    gap: 10px;
+}
+
+.btn-back {
+    height: 46px;
+    padding: 0 22px;
+    background: #fff;
+    border: 1.5px solid var(--bdr);
+    border-radius: var(--r);
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--mid);
+    transition: border-color .2s, color .2s;
+}
+
+.btn-back:hover {
+    border-color: var(--gd);
+    color: var(--gd)
+}
+
+.btn-next,
+.btn-submit-booking {
+    height: 46px;
+    padding: 0 30px;
+    background: var(--g);
+    border: none;
+    border-radius: var(--r);
+    font-size: 14px;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: .03em;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: background .25s, transform .15s;
+}
+
+.btn-next:hover,
+.btn-submit-booking:hover {
+    background: var(--gd);
+    transform: translateY(-1px)
+}
+
+.btn-next:active,
+.btn-submit-booking:active {
+    transform: translateY(0)
+}
+
+/* ── Review table (step 3) ── */
+.review-box {
+    background: #fff;
+    border-radius: 10px;
+    padding: 18px 20px;
+    margin-bottom: 18px;
+    border: 1.5px solid var(--bdr);
+}
+
+.review-box .rtitle {
+    font-size: 11.5px;
+    font-weight: 700;
+    color: var(--gd);
+    text-transform: uppercase;
+    letter-spacing: .07em;
+    margin-bottom: 12px;
+}
+
+.review-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px
+}
+
+.review-table tr {
+    border-bottom: 1px solid var(--bdr)
+}
+
+.review-table tr:last-child {
+    border-bottom: none
+}
+
+.review-table td {
+    padding: 9px 4px
+}
+
+.review-table td:first-child {
+    color: var(--mid);
+    font-weight: 600;
+    width: 38%
+}
+
+.review-table td:last-child {
+    color: var(--dark);
+    font-weight: 700
+}
+
+/* ── Step 4: Success ── */
+.success-screen {
+    text-align: center;
+    padding: 12px 0 4px;
+}
+
+.success-icon {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--g), var(--gd));
+    color: #fff;
+    font-size: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    box-shadow: 0 8px 28px rgba(59, 79, 68, .3);
+}
+
+.success-screen h3 {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--gd);
+    margin-bottom: 8px
+}
+
+.success-screen p {
+    font-size: 14px;
+    color: var(--mid);
+    line-height: 1.7;
+    margin-bottom: 6px
+}
+
+.success-ref {
+    display: inline-block;
+    margin: 14px 0 20px;
+    /* background: var(--gl); */
+    border-radius: 8px;
+    padding: 8px 20px;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--gd);
+}
+
+.btn-new {
+    height: 46px;
+    padding: 0 28px;
+    background: var(--g);
+    border: none;
+    border-radius: var(--r);
+    font-size: 14px;
+    font-weight: 700;
+    color: #fff;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: background .2s;
+}
+
+.btn-new:hover {
+    background: var(--gd)
+}
+
+.enquiry-modal[hidden] {
+    display: none
+}
+
+.enquiry-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 10000;
+    display: grid;
+    place-items: center;
+    padding: 20px;
+}
+
+.enquiry-modal-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(20, 31, 25, .62);
+    backdrop-filter: blur(3px);
+}
+
+.enquiry-modal-card {
+    position: relative;
+    z-index: 1;
+    width: min(460px, 100%);
+    padding: 34px 30px 30px;
+    border-radius: 16px;
+    background: #fff;
+    box-shadow: 0 20px 70px rgba(0, 0, 0, .28);
+    animation: enquiry-modal-in .22s ease-out;
+}
+
+.modal-close {
+    position: absolute;
+    top: 10px;
+    right: 13px;
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: var(--mid);
+    font-size: 28px;
+    line-height: 1;
+}
+
+.modal-close:hover {
+    color: var(--gd);
+}
+
+body.enquiry-modal-open {
+    overflow: hidden;
+}
+
+@keyframes enquiry-modal-in {
+    from { opacity: 0; transform: translateY(12px) scale(.98); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* ════════════════════════════════════════════
+   SIMPLE CONTACT FORM (below)
+════════════════════════════════════════════ */
+.simple-contact-section {
+    margin-top: 10px
+}
+
+.simple-contact-section .sec-heading {
+    font-size: clamp(20px, 3vw, 26px);
+    font-weight: 700;
+    color: var(--dark);
+    text-align: center;
+    margin-bottom: 8px;
+}
+
+.simple-contact-section .sec-sub {
+    font-size: 14px;
+    color: var(--mid);
+    text-align: center;
+    margin-bottom: 36px;
+}
+
+
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px
+}
+
+.form-grid .form-row {
+    margin-bottom: 0
+}
+
+.form-grid .form-row.full {
+    grid-column: 1/-1
+}
+
+.btn-contact-submit {
+    width: 0%;
+    height: 0px;
+    background: var(--g);
+    border: none;
+    border-radius: var(--r);
+    font-size: 15px;
+    font-weight: 700;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: background .2s, transform .15s;
+}
+
+.btn-contact-submit:hover {
+    background: var(--gd);
+    transform: translateY(-1px)
+}
+
+/* ── Contact success ── */
+.contact-success {
+    display: none;
+    text-align: center;
+    padding: 24px 0
+}
+
+.contact-success .success-icon {
+    margin: 0 auto 16px
+}
+
+.contact-success h3 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 6px
+}
+
+.contact-success p {
+    font-size: 14px;
+    color: var(--mid)
+}
+
+/* ════════════════════════════════════════════
+   RESPONSIVE
+════════════════════════════════════════════ */
+@media(max-width:1024px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 32px
+    }
+
+    .booking-card {
+        order: -1
+    }
+}
+
+@media(max-width:767px) {
+    .hero-section {
+        height: 160px
+    }
+
+    .booking-inner,
+    .contact-info-card,
+    .contact-form-wrap {
+        padding: 24px 18px
+    }
+
+    .check-group {
+        grid-template-columns: 1fr
+    }
+
+    .date-time-row {
+        grid-template-columns: 1fr
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr
+    }
+
+    .form-grid .form-row.full {
+        grid-column: 1/-1
+    }
+
+    .biolife-title-box {
+        margin-bottom: 10px
+    }
+}
+
+@media(max-width:479px) {
+    .container {
+        padding: 0 12px
+    }
+
+    .hero-section {
+        height: 130px
+    }
+
+    .step-label {
+        font-size: 9px
+    }
+
+    .form-nav {
+        flex-direction: column-reverse
+    }
+
+    .btn-next,
+    .btn-back,
+    .btn-submit-booking,
+    .btn-new {
+        width: 100%;
+        justify-content: center
+    }
+
+    .booking-inner {
+        padding: 20px 14px
+    }
+
+    .check-group {
+        grid-template-columns: 1fr
+    }
+}
+
+
+/* ── Dropdown / button alignment ── */
+
+/* Give select enough right padding so text never overlaps the arrow icon */
+.txt-select {
+    padding-right: 40px;
+}
+
+/* Ensure the form-nav button aligns flush right and vertically centers */
+.form-nav {
+    align-items: center;
+}
+
+/* Keep nice-select (if active) consistent with native selects */
+.nice-select {
+    width: 100%;
+    height: 46px;
+    line-height: 44px;
+    float: none;
+    border-radius: var(--r);
+    font-family: 'Cairo', sans-serif;
+    font-size: 14px;
+}
+
+
+
+
+
+
+
+/* required */
+.txt-input.invalid {
+    border-color: #e03131;
+}
+
+.field-error {
+    display: none;
+    color: #e03131;
+    font-size: 12px;
+    font-weight: 600;
+    margin-top: 6px;
+}
+
+.field-error.show {
+    display: block;
+}

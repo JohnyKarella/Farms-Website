@@ -1,0 +1,443 @@
+:root {
+    --green-deep: #1f4d3a;
+    --green: #2f6b4f;
+    --green-soft: #e7f0e6;
+    --gold: #c79a3d;
+    --gold-soft: #f3e6c4;
+    --cream: #faf7f0;
+    --ink: #233024;
+    --ink-soft: #5b6b5e;
+    --card-bg: #ffffff;
+    --border: #e1e6de;
+    --radius: 14px;
+    --shadow: 0 6px 20px rgba(31, 77, 58, 0.08);
+    --shadow-lg: 0 20px 60px rgba(20, 40, 30, 0.28);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.plant-catalog {
+    background: var(--cream);
+    color: var(--ink);
+    padding: 28px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.plant-catalog h2.catalog-title {
+    font-size: clamp(1.6rem, 2.4vw, 2.3rem);
+    color: var(--green-deep);
+    margin: 0 0 4px;
+    letter-spacing: 0.3px;
+}
+
+.plant-catalog p.catalog-sub {
+    margin: 0 0 24px;
+    color: var(--ink-soft);
+    font-size: 0.98rem;
+}
+
+.catalog-layout {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    gap: 28px;
+    align-items: start;
+}
+
+/* ---------- Sidebar ---------- */
+.catalog-sidebar {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 20px;
+    position: sticky;
+    top: 20px;
+}
+
+.catalog-sidebar h3 {
+    margin: 0 0 14px;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1.4px;
+    color: var(--gold);
+    font-weight: 700;
+}
+
+.filter-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.filter-list button {
+    width: 100%;
+    text-align: left;
+    background: none;
+    border: none;
+    padding: 10px 12px;
+    border-radius: 9px;
+    font-size: 15px;
+    color: var(--ink);
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background 0.15s ease, color 0.15s ease;
+}
+
+.filter-list button:hover {
+    background: var(--green-soft);
+}
+
+.filter-list button.active {
+    background: var(--green-deep);
+    color: #fff;
+    font-weight: 600;
+}
+
+.filter-list button .count {
+    font-size: 13px;
+    opacity: 0.75;
+}
+
+/* mobile dropdown select, hidden on desktop */
+.filter-select {
+    display: none;
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    background: var(--card-bg);
+    color: var(--ink);
+    font-size: 15px;
+    appearance: none;
+    -webkit-appearance: none;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%231f4d3a' stroke-width='2'><path d='M6 9l6 6 6-6'/></svg>");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+    background-size: 16px;
+}
+
+/* ---------- Grid ---------- */
+.catalog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+    gap: 20px;
+    background: #faf7f0;
+}
+
+.plant-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: var(--shadow);
+    transition: transform 0.22s ease, box-shadow 0.22s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.plant-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 14px 30px rgba(31, 77, 58, 0.16);
+}
+
+.plant-card .thumb-wrap {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4/3.4;
+    overflow: hidden;
+    background: linear-gradient(135deg, var(--green-soft), var(--gold-soft));
+}
+
+.plant-card .thumb-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.plant-card:hover .thumb-wrap img {
+    transform: scale(1.07);
+}
+
+.plant-card .thumb-wrap.no-img::after {
+    content: "🌿";
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.6rem;
+}
+
+.plant-card .tag {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: rgba(31, 77, 58, 0.88);
+    color: #fff;
+    font-size: 0.68rem;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+    padding: 4px 9px;
+    border-radius: 20px;
+}
+
+.plant-card .info {
+    padding: 14px 16px 16px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.plant-card .info h4 {
+    margin: 0;
+    font-size: 1.02rem;
+    color: var(--green-deep);
+}
+
+.plant-card .info .botanical {
+    font-size: 0.8rem;
+    font-style: italic;
+    color: var(--ink-soft);
+}
+
+.plant-card .info .excerpt {
+    font-size: 0.85rem;
+    color: var(--ink-soft);
+    margin-top: 6px;
+    line-height: 1.4;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.plant-card .view-more {
+    margin-top: 2px;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--gold);
+    letter-spacing: 0.4px;
+}
+
+.empty-state {
+    grid-column: 1/-1;
+    text-align: center;
+    padding: 50px 20px;
+    color: #fff;
+}
+
+/* ---------- Modal ---------- */
+.plant-modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 25, 18, 0.6);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    z-index: 999;
+    backdrop-filter: blur(2px);
+}
+
+.plant-modal-overlay.open {
+    display: flex;
+}
+
+.plant-modal {
+    background: #fff;
+    border-radius: 18px;
+    width: 100%;
+    max-width: 760px;
+    max-height: 88vh;
+    overflow-y: auto;
+    box-shadow: var(--shadow-lg);
+    position: relative;
+    animation: modalIn 0.25s ease;
+}
+
+@keyframes modalIn {
+    from {
+        opacity: 0;
+        transform: translateY(16px) scale(0.98);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.plant-modal .modal-img-wrap {
+    width: 100%;
+    aspect-ratio: 16/8;
+    background: linear-gradient(135deg, var(--green-soft), var(--gold-soft));
+    overflow: hidden;
+    position: relative;
+    border-radius: 18px 18px 0 0;
+}
+
+.plant-modal .modal-img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.plant-modal .modal-img-wrap.no-img::after {
+    content: "🌿";
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3.4rem;
+}
+
+.modal-close {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: none;
+    background: rgb(255 255 255 / 45%);
+    color: #fff;
+    font-size: 15px;
+    font-weight: 800;
+    line-height: 1;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+}
+
+.modal-close:hover {
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.modal-body {
+    padding: 24px 28px 30px;
+}
+
+.modal-body .modal-category {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    color: var(--gold);
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+.modal-body h3 {
+    margin: 0 0 2px;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--green-deep);
+}
+
+.modal-body .modal-botanical {
+    font-style: italic;
+    color: #000;
+    margin-bottom: 14px;
+    font-size: 13px;
+}
+
+.modal-body .modal-desc {
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.65;
+    color: var(--ink);
+}
+
+.modal-facts {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-top: 18px;
+}
+
+.modal-facts div {
+    background: var(--green-soft);
+    border-radius: 10px;
+    padding: 10px 12px;
+}
+
+.modal-facts div span {
+    display: block;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #000;
+    opacity: 0.75;
+    margin-bottom: 3px;
+}
+
+.modal-facts div strong {
+    font-size: 11px;
+    color: var(--ink);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width:860px) {
+    .catalog-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .catalog-sidebar {
+        position: static;
+        padding: 14px 16px;
+    }
+
+    .catalog-sidebar h3 {
+        display: none;
+    }
+
+    .filter-list {
+        display: none;
+    }
+
+    .filter-select {
+        display: block;
+    }
+}
+
+@media (max-width:480px) {
+    .plant-catalog {
+        padding: 16px;
+    }
+
+    .catalog-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 14px;
+    }
+
+    .plant-card .info {
+        padding: 10px 12px 12px;
+    }
+
+    .plant-card .info h4 {
+        font-size: 0.92rem;
+    }
+
+    .modal-body {
+        padding: 18px 18px 24px;
+    }
+
+    .modal-facts {
+        grid-template-columns: 1fr 1fr;
+    }
+}

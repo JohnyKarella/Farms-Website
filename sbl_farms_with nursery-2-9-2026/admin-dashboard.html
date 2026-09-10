@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SBL Farms | Enquiry Desk</title>
+    <link rel="stylesheet" href="assets/admin/admin.css?v=15">
+</head>
+<body class="dashboard-page">
+    <div class="dashboard-backdrop" style="background-image:url('assets/customs/images/banner/main_banner/bnr (14).jpg');"></div>
+    <main class="shell">
+        <section id="dashboardView" class="dashboard">
+            <header class="topbar">
+                <div class="topbar-brand">
+                    <a href="index.html" class="topbar-logo" title="Back to SBL Farms">
+                        <img src="assets/images/footerlogo.png" alt="SBL Farms Logo" class="admin-logo">
+                    </a>
+                    <div class="topbar-title">
+                        <p class="eyebrow">SBL Farms</p>
+                        <h1>Enquiry desk</h1>
+                    </div>
+                </div>
+                <button id="logoutButton" class="secondary">Sign out <span aria-hidden="true">&rarr;</span></button>
+            </header>
+            <div class="toolbar">
+                <label class="search"><span aria-hidden="true">&#8981;</span><input id="search" type="search" placeholder="Search name, email or reference"></label>
+                <div class="filter-pair">
+                    <select id="statusFilter" aria-label="Filter by status"><option value="all">All statuses</option><option value="new">New</option><option value="contacted">Contacted</option><option value="closed">Closed</option><option value="not_interested">Not interested</option></select>
+                    <select id="categoryFilter" aria-label="Filter by enquiry category"><option value="all">All categories</option></select>
+                </div>
+                <div class="date-range">
+                    <label for="dateFrom">From<input id="dateFrom" type="date"></label>
+                    <label for="dateTo">To<input id="dateTo" type="date"></label>
+                    <button id="clearDates" class="secondary" type="button">Clear</button>
+                </div>
+                <button id="refreshButton" class="secondary"><span class="spin-icon" aria-hidden="true">&#x21bb;</span> Refresh</button>
+                <button id="exportButton" class="secondary" type="button"><span class="btn-icon" aria-hidden="true">&#x2913;</span> Export CSV</button>
+            </div>
+            <div class="stats" id="stats"></div>
+            <p id="dashboardError" class="error" role="alert"></p>
+            <section id="enquiryList" class="enquiry-list" aria-live="polite"></section>
+            <section class="report">
+                <header class="report-head">
+                    <div class="report-title-group">
+                        <h2>Member query report</h2>
+                        <p class="report-label" id="reportLabel">Performance breakdown for <strong>All team members</strong></p>
+                    </div>
+                    <select id="reportMember" aria-label="Select team member"></select>
+                </header>
+                <div class="report-stats" id="reportStats"></div>
+            </section>
+        </section>
+    </main>
+    <script src="assets/admin/admin-dashboard.js?v=15"></script>
+</body>
+</html>
