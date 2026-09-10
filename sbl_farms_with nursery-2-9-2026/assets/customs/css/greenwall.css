@@ -73,7 +73,7 @@
     overflow: hidden
 }
 
-.stat-box {
+.stats-grid .stat-box {
     background: var(--bg);
     padding: 28px 20px;
     text-align: center;
@@ -82,7 +82,7 @@
     transition: opacity .55s ease, transform .55s ease
 }
 
-.stat-box.visible {
+.stats-grid .stat-box.visible {
     opacity: 1;
     transform: translateY(0)
 }
