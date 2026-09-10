@@ -7,7 +7,9 @@
     function animateCount(el) {
       if (animated.has(el)) return;
       animated.add(el);
-      var target = parseInt(el.dataset.target, 10);
+      var rawTarget = el.dataset.target || el.textContent.replace(/[^\d]/g, '');
+      var target = parseInt(rawTarget, 10);
+      if (isNaN(target)) return;
       var duration = 1800;
       var startTime = null;
 
