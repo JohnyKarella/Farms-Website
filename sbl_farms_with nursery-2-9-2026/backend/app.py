@@ -9,6 +9,7 @@ import sys
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Dict
+import urllib.parse
 
 from dotenv import load_dotenv
 from flask import (
@@ -434,6 +435,33 @@ def api_legacy_list_enquiries() -> Response:
 
 # ── Static Website Hosting ────────────────────────────────────
 
+STATIC_EXTENSIONS = {
+    ".jpg", ".jpeg", ".png", ".webp", ".gif", ".svg", ".ico", ".bmp",
+    ".css", ".js", ".json", ".map", ".woff", ".woff2", ".ttf", ".eot",
+    ".mp4", ".webm", ".mp3", ".wav", ".pdf", ".txt", ".xml",
+}
+
+
+def _resolve_file_case_insensitive(base: Path, rel_path: str) -> Path | None:
+    parts = Path(rel_path).parts
+    current = base
+    for part in parts:
+        if not current.is_dir():
+            return None
+        lower_part = part.lower()
+        matched = None
+        try:
+            for entry in os.scandir(current):
+                if entry.name.lower() == lower_part:
+                    matched = Path(entry.path)
+                    break
+        except OSError:
+            return None
+        if not matched:
+            return None
+        current = matched
+    return current if current.is_file() else None
+
 
 @app.get("/")
 def serve_index() -> Response:
@@ -442,11 +470,34 @@ def serve_index() -> Response:
 
 @app.get("/<path:filename>")
 def serve_static_file(filename: str) -> Response:
-    file_path = SITE_ROOT / filename
+    clean_name = urllib.parse.unquote(filename).replace("\\", "")
+
+    # 1. Exact match
+    file_path = SITE_ROOT / clean_name
     if file_path.is_file():
-        return send_from_directory(SITE_ROOT, filename)
-    if (SITE_ROOT / f"{filename}.html").is_file():
-        return send_from_directory(SITE_ROOT, f"{filename}.html")
+        return send_from_directory(SITE_ROOT, clean_name)
+
+    # 2. Case-insensitive lookup (crucial for Linux environments like Railway)
+    resolved = _resolve_file_case_insensitive(SITE_ROOT, clean_name)
+    if resolved and resolved.is_file():
+        rel = resolved.relative_to(SITE_ROOT).as_posix()
+        return send_from_directory(SITE_ROOT, rel)
+
+    # 3. If missing an asset (image, css, js), return 404 instead of index.html
+    ext = Path(clean_name).suffix.lower()
+    if ext in STATIC_EXTENSIONS:
+        return jsonify({"error": "Static asset not found"}), 404
+
+    # 4. Clean HTML route (e.g. /events -> events.html)
+    html_target = SITE_ROOT / f"{clean_name}.html"
+    if html_target.is_file():
+        return send_from_directory(SITE_ROOT, f"{clean_name}.html")
+    resolved_html = _resolve_file_case_insensitive(SITE_ROOT, f"{clean_name}.html")
+    if resolved_html and resolved_html.is_file():
+        rel = resolved_html.relative_to(SITE_ROOT).as_posix()
+        return send_from_directory(SITE_ROOT, rel)
+
+    # 5. Fallback for client-side routing
     return send_from_directory(SITE_ROOT, "index.html")
 
 
