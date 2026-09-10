@@ -445,3 +445,58 @@
     padding: 18px 18px 24px;
   }
 }
+
+/* ---------- Single Enquiry Button (After Plants) ---------- */
+.plants-enquiry-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 16px 20px;
+  width: 100%;
+}
+
+.single-plant-enquire-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: var(--green-deep, #1f4d3a);
+  color: #ffffff !important;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  padding: 14px 44px;
+  border-radius: 35px;
+  text-decoration: none !important;
+  box-shadow: 0 6px 20px rgba(31, 77, 58, 0.22);
+  transition: all 0.25s ease;
+  cursor: pointer;
+}
+
+.single-plant-enquire-btn:hover {
+  background: var(--gold, #c79a3d);
+  color: #ffffff !important;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(199, 154, 61, 0.35);
+}
+
+.single-plant-enquire-btn:active {
+  transform: translateY(0);
+}
+
+.single-plant-enquire-btn i {
+  font-size: 16px;
+}
+
+@media (max-width: 480px) {
+  .plants-enquiry-container {
+    padding: 26px 12px 16px;
+  }
+
+  .single-plant-enquire-btn {
+    width: 100%;
+    max-width: 290px;
+    padding: 12px 20px;
+    font-size: 15px;
+  }
+}

@@ -8,6 +8,7 @@
   var categoryItems = Array.prototype.slice.call(document.querySelectorAll('.category-item'));
   var categoryToggles = Array.prototype.slice.call(document.querySelectorAll('.category-toggle'));
   var subButtons = Array.prototype.slice.call(document.querySelectorAll('.sub-btn'));
+  var singleEnquireBtn = document.getElementById('catalogSingleEnquireBtn');
 
   /* ---------- Category dropdown (accordion): only one open at a time ---------- */
   function openCategory(item) {
@@ -45,6 +46,10 @@
     subButtons.forEach(function (b) {
       b.classList.toggle('active', b === activeBtn);
     });
+
+    if (singleEnquireBtn && name) {
+      singleEnquireBtn.href = 'contact.html?category=' + encodeURIComponent(name);
+    }
 
 
   }
