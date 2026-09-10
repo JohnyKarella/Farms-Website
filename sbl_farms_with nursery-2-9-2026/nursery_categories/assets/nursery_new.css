@@ -455,8 +455,9 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 24px 16px 16px;
+  padding: 30px 16px 15px;
   width: 100%;
+  clear: both;
   background: transparent !important;
 }
 
