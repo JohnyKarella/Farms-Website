@@ -456,7 +456,7 @@ main {
   justify-content: center !important;
   align-items: center !important;
   margin: 0 auto !important;
-  padding: 30px 16px 20px !important;
+  padding: 40px 16px 30px !important;
   width: 100% !important;
   text-align: center !important;
   clear: both !important;
@@ -467,25 +467,25 @@ main {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: 10px;
   background: #c9a84c !important;
   color: #ffffff !important;
-  font-size: 16px;
-  font-weight: 600;
+  font-size: 20px;
+  font-weight: 700;
   letter-spacing: 0.5px;
-  padding: 13px 36px;
-  border-radius: 30px;
+  padding: 16px 52px;
+  border-radius: 40px;
   text-decoration: none !important;
-  box-shadow: 0 4px 15px rgba(201, 168, 76, 0.32);
-  transition: all 0.2s ease;
+  box-shadow: 0 6px 22px rgba(201, 168, 76, 0.4);
+  transition: all 0.25s ease;
   cursor: pointer;
 }
 
 .single-plant-enquire-btn:hover {
   background: #dfbc5e !important;
   color: #ffffff !important;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(201, 168, 76, 0.45);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 26px rgba(201, 168, 76, 0.55);
 }
 
 .single-plant-enquire-btn:active {
@@ -493,16 +493,17 @@ main {
 }
 
 .single-plant-enquire-btn i {
-  font-size: 15px;
+  font-size: 19px;
+  margin-right: 8px;
 }
 
 @media (max-width: 480px) {
   .plants-enquiry-container {
-    padding: 24px 12px 18px;
+    padding: 28px 14px 22px;
   }
 
   .single-plant-enquire-btn {
-    padding: 11px 28px;
-    font-size: 14.5px;
+    padding: 14px 34px;
+    font-size: 17px;
   }
 }
