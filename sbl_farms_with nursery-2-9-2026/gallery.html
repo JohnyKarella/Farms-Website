@@ -752,29 +752,6 @@
 
                 </div>
             </section>
-            <!-- ════════ LIGHTBOX ════════ -->
-            <div class="lightbox" id="lightbox">
-                <button class="lb-close" id="lbClose">
-                    <svg viewBox="0 0 24 24">
-                        <line x1="18" y1="6" x2="6" y2="18" />
-                        <line x1="6" y1="6" x2="18" y2="18" />
-                    </svg>
-                </button>
-                <button class="lb-arrow lb-prev" id="lbPrev">
-                    <svg viewBox="0 0 24 24">
-                        <polyline points="15 18 9 12 15 6" />
-                    </svg>
-                </button>
-                <div class="lb-wrap">
-                    <img id="lbImg" src="" alt="SBL ">
-                    <div class="lb-counter" id="lbCounter"></div>
-                </div>
-                <button class="lb-arrow lb-next" id="lbNext">
-                    <svg viewBox="0 0 24 24">
-                        <polyline points="9 18 15 12 9 6" />
-                    </svg>
-                </button>
-            </div>
 
 
 
@@ -970,6 +947,30 @@
         </svg>
     </a>
 
+
+    <!-- ════════ LIGHTBOX ════════ -->
+    <div class="lightbox" id="lightbox">
+        <button class="lb-close" id="lbClose" aria-label="Close Lightbox">
+            <svg viewBox="0 0 24 24">
+                <line x1="18" y1="6" x2="6" y2="18" />
+                <line x1="6" y1="6" x2="18" y2="18" />
+            </svg>
+        </button>
+        <button class="lb-arrow lb-prev" id="lbPrev" aria-label="Previous image">
+            <svg viewBox="0 0 24 24">
+                <polyline points="15 18 9 12 15 6" />
+            </svg>
+        </button>
+        <div class="lb-wrap">
+            <img id="lbImg" src="" alt="SBL Gallery">
+            <div class="lb-counter" id="lbCounter"></div>
+        </div>
+        <button class="lb-arrow lb-next" id="lbNext" aria-label="Next image">
+            <svg viewBox="0 0 24 24">
+                <polyline points="9 18 15 12 9 6" />
+            </svg>
+        </button>
+    </div>
 
     <!-- Scroll Top Button -->
     <a class="btn-scroll-top"><i class="biolife-icon icon-left-arrow"></i></a>
