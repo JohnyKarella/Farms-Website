@@ -1,10 +1,16 @@
 // Nursery
 
-// Ultra-smooth count-up animation for stats
+// Ultra-smooth count-up animation and staggered scroll reveal for stats
 (function () {
     function initSmoothCounters() {
+        var statsRow = document.querySelector('.stats-row');
         var statBoxes = document.querySelectorAll('.stat-box');
         if (!statBoxes.length) return;
+
+        // Mark container so CSS enables the smooth entrance animation
+        if (statsRow) {
+            statsRow.classList.add('js-stats-ready');
+        }
 
         function animateNumber(numEl) {
             if (numEl.dataset.counted === 'true') return;
@@ -38,24 +44,37 @@
             requestAnimationFrame(step);
         }
 
+        function revealBox(box, idx) {
+            if (box.classList.contains('is-revealed')) return;
+            box.classList.add('is-revealed');
+            var numEl = box.querySelector('.stat-number, .num');
+            if (numEl) {
+                setTimeout(function () {
+                    animateNumber(numEl);
+                }, (idx * 60) + 80);
+            }
+        }
+
         if ('IntersectionObserver' in window) {
             var observer = new IntersectionObserver(function (entries) {
                 entries.forEach(function (entry) {
                     if (entry.isIntersecting) {
-                        var numEl = entry.target.querySelector('.stat-number, .num');
-                        if (numEl) animateNumber(numEl);
+                        statBoxes.forEach(function (box, idx) {
+                            revealBox(box, idx);
+                        });
                         observer.unobserve(entry.target);
                     }
                 });
             }, { threshold: 0.1, rootMargin: '0px 0px -20px 0px' });
 
-            statBoxes.forEach(function (box) {
-                observer.observe(box);
-            });
+            if (statsRow) {
+                observer.observe(statsRow);
+            } else {
+                statBoxes.forEach(function (box) { observer.observe(box); });
+            }
         } else {
-            statBoxes.forEach(function (box) {
-                var numEl = box.querySelector('.stat-number, .num');
-                if (numEl) animateNumber(numEl);
+            statBoxes.forEach(function (box, idx) {
+                revealBox(box, idx);
             });
         }
     }
