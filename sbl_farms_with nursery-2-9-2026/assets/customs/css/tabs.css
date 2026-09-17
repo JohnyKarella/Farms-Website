@@ -446,15 +446,18 @@
 }
 
 .tab-tog {
-    width: 24px;
-    height: 24px;
+    width: 26px;
+    height: 26px;
     border-radius: 50%;
     border: 1px solid var(--border);
     display: flex;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
-    transition: background .22s, border-color .22s, transform .32s;
+    transition: background .22s, border-color .22s, transform .32s cubic-bezier(0.25, 1, 0.5, 1);
+    cursor: pointer;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .tab-tog svg {
@@ -676,6 +679,40 @@
     /* show mobile expand block */
     .tab-expand {
         display: block;
+    }
+
+    .tab-hd {
+        cursor: pointer;
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    .tab-tog {
+        width: 32px;
+        height: 32px;
+        cursor: pointer;
+        touch-action: manipulation;
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    .tab-tog svg {
+        width: 14px;
+        height: 14px;
+    }
+
+    .tab-tog:active {
+        transform: scale(0.9);
+    }
+
+    #d1:checked~.diff-card label[for="d1"] .tab-tog:active,
+    #d2:checked~.diff-card label[for="d2"] .tab-tog:active,
+    #d3:checked~.diff-card label[for="d3"] .tab-tog:active,
+    #d4:checked~.diff-card label[for="d4"] .tab-tog:active,
+    #d5:checked~.diff-card label[for="d5"] .tab-tog:active,
+    #d6:checked~.diff-card label[for="d6"] .tab-tog:active,
+    #d7:checked~.diff-card label[for="d7"] .tab-tog:active,
+    #d8:checked~.diff-card label[for="d8"] .tab-tog:active,
+    #d9:checked~.diff-card label[for="d9"] .tab-tog:active {
+        transform: rotate(45deg) scale(0.9);
     }
 
     /* hide short description on mobile */
