@@ -220,7 +220,7 @@
             var inDateRange = (fromTime === null || created >= fromTime) && (toTime === null || created <= toTime);
             return (!query || haystack.indexOf(query) >= 0) && (status === 'all' || item.status === status) && (category === 'all' || item.enquiryAbout === category) && inDateRange;
         });
-        document.getElementById('enquiryList').innerHTML = filtered.length ? filtered.map(card).join('') : '<div class="empty">No enquiries match these filters.</div>';
+        document.getElementById('enquiryList').innerHTML = filtered.length ? filtered.map(card).join('') : '<div class="empty">No enquires match these filters.</div>';
         document.querySelectorAll('.status').forEach(function (select) {
             select.addEventListener('change', function (e) {
                 e.target.className = 'status ' + e.target.value;
@@ -303,7 +303,7 @@
             .catch(function (err) {
                 button.disabled = false;
                 button.textContent = 'Delete';
-                dashboardError.textContent = err.message || 'Failed to delete enquiry.';
+                dashboardError.textContent = err.message || 'Failed to delete enquire.';
             });
     }
 
@@ -440,7 +440,7 @@
                     '<label class="field"><span>Phone</span><input class="edit-phone" type="tel" value="' + escapeHtml(item.phone || '') + '"></label>' +
                 '</div>' +
                 '<div class="edit-row">' +
-                    '<label class="field"><span>Enquiry About</span><select class="edit-category">' + getCategoryOptions(item.enquiryAbout) + '</select></label>' +
+                    '<label class="field"><span>Enquire About</span><select class="edit-category">' + getCategoryOptions(item.enquiryAbout) + '</select></label>' +
                     '<label class="field"><span>Heard Via</span><select class="edit-heard">' + getHeardOptions(item.heardAbout) + '</select></label>' +
                 '</div>' +
                 '<label class="field"><span>Notes / Remarks</span><textarea class="edit-notes" rows="2" placeholder="Notes">' + escapeHtml(item.notes || '') + '</textarea></label>' +
@@ -466,7 +466,7 @@
         var sideHtml = '<div class="enquiry-side">' +
             '<div class="side-top">' +
                 '<div class="reference">' + escapeHtml(item.reference) + '</div>' +
-                '<select class="status ' + status + '" data-id="' + escapeHtml(item.id) + '" aria-label="Update enquiry status">' +
+                '<select class="status ' + status + '" data-id="' + escapeHtml(item.id) + '" aria-label="Update enquire status">' +
                     '<option value="new" ' + (status === 'new' ? 'selected' : '') + '>New</option>' +
                     '<option value="contacted" ' + (status === 'contacted' ? 'selected' : '') + '>Contacted</option>' +
                     '<option value="closed" ' + (status === 'closed' ? 'selected' : '') + '>Closed</option>' +

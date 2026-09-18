@@ -203,6 +203,8 @@ def handle_create_enquiry() -> Response:
 
 app.add_url_rule("/api/enquiry", view_func=handle_create_enquiry, methods=["POST"])
 app.add_url_rule("/api/enquiries", view_func=handle_create_enquiry, methods=["POST"])
+app.add_url_rule("/api/enquire", view_func=handle_create_enquiry, methods=["POST"])
+app.add_url_rule("/api/enquires", view_func=handle_create_enquiry, methods=["POST"])
 
 
 @app.post("/api/newsletter")
