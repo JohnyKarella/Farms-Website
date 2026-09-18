@@ -83,10 +83,10 @@
 		            let new_parent_panel_id = $(target_id).attr('data-parent-panel');
 		            if ( typeof new_parent_panel_id == 'undefined') {
 		                let root_title = $('.biolife-panels-actions-wrap').data('root_title');
-		                if(typeof root_title !== 'undefined'){
+		                if(typeof root_title !== 'undefined' && root_title){
 		                    current_panel_title.html(root_title);
 		                }else{
-		                    current_panel_title.remove();
+		                    current_panel_title.html('');
 		                }
 		                previous_panel.remove();
 		            }else {
@@ -136,8 +136,8 @@
 		    wrap_container: function(){
 		    	if($body.find('#biolife-clone-wrap').length) return 0;
 				let mb_menu	='<div id="biolife-clone-wrap" class="biolife-clone-wrap">';
-				mb_menu +='<div class="biolife-panels-actions-wrap" data-root_title="Main Panel">';
-				mb_menu +='<span class="biolife-current-panel-title">Main Panel</span>';
+				mb_menu +='<div class="biolife-panels-actions-wrap" data-root_title="">';
+				mb_menu +='<span class="biolife-current-panel-title"></span>';
 				mb_menu +='<a class="biolife-close-btn biolife-close-panels" href="#" data-object="open-mobile-menu">&times;</a>';
 				mb_menu +='</div>';
 				mb_menu +='<div class="biolife-panels">';

@@ -958,9 +958,71 @@ body {
 }
 
 .biolife-panel .mega-content {
-    padding: 25px 0;
+    padding: 0;
     display: block;
     width: 100%;
+}
+
+.biolife-sub-panel .wrap-megamenu,
+.biolife-sub-panel .mega-content {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+.biolife-sub-panel .mega-content > [class*="col-"] {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    float: none;
+    clear: both;
+}
+
+.biolife-sub-panel .wrap-custom-menu,
+.biolife-sub-panel .wrap-custom-menu.vertical-menu {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+.biolife-sub-panel ul,
+.biolife-sub-panel ul.menu {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    width: 100%;
+}
+
+.biolife-sub-panel ul > li,
+.biolife-sub-panel ul.menu > li {
+    list-style: none;
+    position: relative;
+    padding: 0 20px;
+    border-bottom: 1px dashed #dddddd;
+    min-height: 50px;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    margin: 0;
+    width: 100%;
+}
+
+.biolife-sub-panel ul > li > a,
+.biolife-sub-panel ul.menu > li > a {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    min-height: 50px;
+    line-height: 50px;
+    font-size: 15px;
+    font-weight: 400;
+    color: #333333;
+    text-transform: capitalize;
+}
+
+.biolife-sub-panel ul > li > a strong,
+.biolife-sub-panel ul.menu > li > a strong {
+    font-weight: 400;
 }
 
 .hero-background {
