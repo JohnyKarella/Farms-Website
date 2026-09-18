@@ -266,7 +266,7 @@
 }
 
 .badge-num {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Playfair Display', Georgia, serif;
   font-size: 1.6rem;
   font-weight: 700;
   color: var(--gold);
@@ -844,7 +844,7 @@
 }
 
 .left-title {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Playfair Display', Georgia, serif;
   font-size: 1.45rem;
   color: #fff;
   font-weight: 700;
@@ -878,7 +878,7 @@
 }
 
 .stat-chip-num {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Playfair Display', Georgia, serif;
   font-size: 1.3rem;
   font-weight: 700;
   color: var(--gold);
@@ -1029,7 +1029,7 @@
   font-size: 15px;
   font-weight: 700;
   color: var(--green-mid);
-  font-family: 'Playfair Display', serif;
+  font-family: 'Playfair Display', Georgia, serif;
   transition: background .3s, border-color .3s;
 }
 
@@ -1156,7 +1156,7 @@
 }
 
 .strip-title {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Playfair Display', Georgia, serif;
   font-size: clamp(1.2rem, 2.5vw, 1.65rem);
   color: #fff;
   line-height: 1.3;

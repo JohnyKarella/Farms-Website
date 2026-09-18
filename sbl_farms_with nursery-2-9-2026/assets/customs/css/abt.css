@@ -99,7 +99,7 @@ h2 {
 }
 
 .stat-number {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Playfair Display', Georgia, serif;
     font-size: clamp(2.2rem, 4vw, 3.5rem);
     color: var(--green-dark);
     font-weight: 700;
@@ -282,7 +282,7 @@ section::before {
 }
 
 .sec-title {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
     font-size: clamp(1.9rem, 4vw, 2.9rem);
     color: var(--green-dark);
     font-weight: 600;

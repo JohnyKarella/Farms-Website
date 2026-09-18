@@ -102,7 +102,7 @@
     }
 
     .cta-text h3 {
-      font-family: 'Cormorant Garamond', serif;
+      font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
       font-size: clamp(1.5rem, 2.8vw, 2.2rem);
       font-weight: 600;
       color: var(--white);
@@ -187,7 +187,7 @@
     }
 
     .logo-text .name {
-      font-family: 'Cormorant Garamond', serif;
+      font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
       font-size: 1.35rem;
       font-weight: 700;
       color: var(--white);
