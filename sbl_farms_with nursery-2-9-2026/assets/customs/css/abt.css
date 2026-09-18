@@ -337,6 +337,7 @@ section::before {
     --playing: running;
 }
 
+.slider-viewport:hover,
 .slider-viewport.paused {
     --playing: paused;
 }
@@ -346,6 +347,9 @@ section::before {
     display: flex;
     gap: 20px;
     width: max-content;
+    will-change: transform;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
     /* CSS-only infinite scroll animation */
     animation: scrollTrack var(--duration, 28s) linear infinite var(--playing, running);
     cursor: grab;
@@ -357,11 +361,11 @@ section::before {
 
 @keyframes scrollTrack {
     0% {
-        transform: translateX(0);
+        transform: translate3d(0, 0, 0);
     }
 
     100% {
-        transform: translateX(var(--scroll-width, -50%));
+        transform: translate3d(var(--scroll-width, -50%), 0, 0);
     }
 }
 
@@ -885,5 +889,121 @@ section::before {
     .cell-icon {
         width: 90px;
         height: 70px;
+    }
+}
+
+/* ════════════════════════════════
+   FULL-BLEED EDGE-TO-EDGE SLIDER FOR MOBILE & TABLETS
+════════════════════════════════ */
+@media (max-width: 900px) {
+    .section-wrap {
+        padding: 15px 0 0 !important;
+        width: 100% !important;
+        max-width: 100vw !important;
+        overflow: hidden !important;
+    }
+
+    /* In case section-wrap is inside .container_about */
+    .container_about .section-wrap {
+        margin-left: -24px !important;
+        margin-right: -24px !important;
+        width: calc(100% + 48px) !important;
+        max-width: none !important;
+    }
+
+    .container_greenwall {
+        padding: 0 !important;
+        max-width: 100% !important;
+        width: 100% !important;
+        margin: 0 !important;
+    }
+
+    .slider-shell {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        overflow: hidden;
+    }
+
+    /* Remove the fade gradients so cards scroll edge-to-edge with full brightness and clarity */
+    .slider-shell::before,
+    .slider-shell::after {
+        display: none !important;
+    }
+
+    .slider-viewport {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        border-radius: 0 !important;
+        overflow: hidden;
+        padding: 10px 0;
+    }
+
+    .slider-track {
+        gap: 16px;
+    }
+
+    .icon-card {
+        flex: 0 0 160px;
+        width: 160px;
+        padding: 14px 10px 12px;
+        border-radius: 14px;
+        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.07);
+    }
+
+    .card-icon-wrap {
+        width: 130px;
+        height: 130px;
+        margin: 0 auto 10px;
+    }
+
+    .card-icon-wrap img {
+        width: 130px !important;
+        height: 130px !important;
+        object-fit: cover;
+        border-radius: 16px !important;
+    }
+
+    .card-name {
+        font-size: 15px;
+        margin-bottom: 2px;
+    }
+}
+
+@media (max-width: 480px) {
+    .section-wrap {
+        padding: 10px 0 0 !important;
+    }
+
+    .slider-viewport {
+        padding: 6px 0;
+    }
+
+    .slider-track {
+        gap: 12px;
+    }
+
+    .icon-card {
+        flex: 0 0 142px;
+        width: 142px;
+        padding: 12px 8px 10px;
+        border-radius: 12px;
+    }
+
+    .card-icon-wrap {
+        width: 118px;
+        height: 118px;
+        margin: 0 auto 8px;
+    }
+
+    .card-icon-wrap img {
+        width: 118px !important;
+        height: 118px !important;
+        border-radius: 14px !important;
+    }
+
+    .card-name {
+        font-size: 14px;
     }
 }
