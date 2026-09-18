@@ -79,7 +79,7 @@
 }
 
 .sec-title {
-    font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+    font-family: 'Cormorant Garamond', serif;
     font-size: clamp(2rem, 4.5vw, 3rem);
     color: var(--green-dark);
     font-weight: 600;
@@ -192,7 +192,7 @@
 }
 
 .lc-num {
-    font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+    font-family: 'Cormorant Garamond', serif;
     font-size: 2rem;
     font-weight: 700;
     color: rgb(184 150 74 / 65%);

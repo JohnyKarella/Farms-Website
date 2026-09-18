@@ -4,11 +4,6 @@
    ============================================= */
 
 
-:root {
-  --ff-display: 'Playfair Display', Georgia, serif;
-  --ff-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-}
-
 .container {
   width: 100%;
   max-width: 1260px;

@@ -43,7 +43,7 @@
     }
 
     .section-title {
-      font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+      font-family: 'Cormorant Garamond', serif;
       font-size: clamp(2rem, 4vw, 3.2rem);
       text-align: center;
       color: var(--green-dark);
@@ -228,7 +228,7 @@
       color: rgba(255, 255, 255, .7);
       font-size: .85rem;
       letter-spacing: 2px;
-      font-family: 'Jost', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      font-family: 'Jost', sans-serif;
       white-space: nowrap;
     }
 

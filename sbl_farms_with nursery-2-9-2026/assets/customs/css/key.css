@@ -42,7 +42,7 @@
 }
 
 .agri-section__title {
-    font-family: 'Playfair Display', Georgia, serif;
+    font-family: 'Playfair Display', serif;
     font-size: clamp(26px, 4vw, 44px);
     color: var(--forest);
     line-height: 1.2;

@@ -1,14 +1,8 @@
 /************************
 * Global Settings       *
 *************************/
-html {
-    -webkit-text-size-adjust: 100%;
-    -ms-text-size-adjust: 100%;
-    text-size-adjust: 100%;
-}
-
 body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-family: Helvetica;
     font-size: 15px;
     line-height: 24px;
     font-weight: 400;
@@ -16,9 +10,6 @@ body {
     overflow-x: hidden;
     -ms-word-wrap: break-word;
     word-wrap: break-word;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-rendering: optimizeLegibility;
 }
 
 label {
@@ -1293,7 +1284,7 @@ body {
     font-weight: 500 !important;
     display: inline-flex !important;
     align-items: center !important;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
+    font-family: Helvetica, Arial, sans-serif !important;
     line-height: 1.2 !important;
     transition: color 0.2s ease, transform 0.2s ease !important;
 }
@@ -5926,8 +5917,8 @@ body.open-overlay #overlay {
     margin: 6px 0 0;
     font-size: 22px;
     color: #000000;
-    line-height: 1.2;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    line-height: 1;
+    font-family: Helvetica;
     /* font-weight: 600; */
     /* font-style: italic; */
 }
@@ -5935,16 +5926,16 @@ body.open-overlay #overlay {
 /* Tablet */
 @media (max-width: 991px) {
     .biolife-title-box .subtitle {
-        margin: 4px 0 0;
-        font-size: clamp(20px, 2.5vw, 26px);
+        margin: -15px -20px 0;
+        font-size: 50px;
     }
 }
 
 /* Mobile */
 @media (max-width: 767px) {
     .biolife-title-box .subtitle {
-        margin: 4px 0 0;
-        font-size: clamp(18px, 4vw, 24px);
+        margin: -10px 0 0;
+        font-size: 34px;
         line-height: 1.2;
         text-align: center;
         /* Optional */
@@ -5954,8 +5945,8 @@ body.open-overlay #overlay {
 /* Small Mobile */
 @media (max-width: 480px) {
     .biolife-title-box .subtitle {
-        font-size: 20px;
-        margin-top: 4px;
+        font-size: 45px;
+        margin-top: 0px;
     }
 }
 
@@ -5968,11 +5959,11 @@ body.open-overlay #overlay {
     display: block;
     margin: 25px 0 0;
     line-height: 1;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-family: sans-serif;
 }
 
 .biolife-title-box.style-02 .subtitle {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-family: Helvetica;
     font-size: 14px;
     font-weight: 600;
     text-transform: uppercase;
@@ -9539,7 +9530,7 @@ li.slick-current .slider-opt04__layout01 .buttons .btn {
 .biolife-banner__promotion2.advance .text-content .second-line i {
     font-weight: 600;
     font-style: normal;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-family: Helvetica;
     text-transform: uppercase;
 }
 
