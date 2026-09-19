@@ -44,7 +44,7 @@
     <link rel="stylesheet" href="assets/customs/css/animations.css">
     <link rel="stylesheet" href="assets/customs/css/reels.css">
 
-    <link rel="stylesheet" href="nursery_categories/assets/nursery_new.css?v=13">
+    <link rel="stylesheet" href="nursery_categories/assets/nursery_new.css?v=15">
 
     <link rel="stylesheet" href="assets/customs/css/contact.css">
     <link rel="stylesheet" href="assets/css/font-awesome.min.css">
@@ -234,15 +234,44 @@
 
           
             <div class="plant-catalog">
-                <h2 class="catalog-title">Our Plant Collection</h2>
-                <br>
+                <!-- Catalog Header & Filter Action Bar -->
+                <div class="catalog-header-bar">
+                    <h2 class="catalog-title">Our Plant Collection</h2>
+                    <div class="catalog-filter-bar">
+                        <button type="button" class="catalog-filter-btn" id="catalogFilterBtn" aria-label="Open filter sidebar">
+                            <svg class="filter-funnel-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                                <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon>
+                            </svg>
+                            <span>Filter</span>
+                            <span class="active-filter-badge" id="activeFilterBadge" style="display: none;"></span>
+                        </button>
+                        <span class="catalog-plant-count" id="catalogCountPill">Showing all plants</span>
+                    </div>
+                </div>
+
+                <!-- Backdrop Overlay -->
+                <div class="catalog-sidebar-overlay" id="catalogSidebarOverlay"></div>
 
                 <div class="catalog-layout">
 
-                    <!-- Sidebar -->
-                    <aside class="catalog-sidebar">
-                        <h3>Filter by Category</h3>
-                        <ul class="category-list" id="categoryList">
+                    <!-- Sidebar Drawer -->
+                    <aside class="catalog-sidebar" id="catalogSidebar">
+                        <div class="catalog-sidebar-header">
+                            <h3 class="sidebar-drawer-title">Filter</h3>
+                            <button type="button" class="catalog-sidebar-close" id="catalogSidebarClose" aria-label="Close filter sidebar">&times;</button>
+                        </div>
+
+                        <div class="catalog-sidebar-body">
+                            <!-- All Plants option -->
+                            <div class="all-plants-btn-wrap">
+                                <button type="button" class="all-plants-btn active" id="allPlantsBtn" data-filter="all">
+                                    <span class="all-plants-text"><i class="fa fa-th-large" style="margin-right: 8px;"></i>All Plants</span>
+                                    <span class="all-plants-count" id="allPlantsCount"></span>
+                                </button>
+                            </div>
+
+                            <h4 class="sidebar-category-heading">FILTER BY CATEGORY</h4>
+                            <ul class="category-list" id="categoryList">
 
                             <li class="category-item" data-category="creepers">
                                 <button class="category-toggle" type="button" aria-expanded="false">
@@ -309,6 +338,7 @@
                             </li>
 
                         </ul>
+                        </div>
                     </aside>
 
                     <!-- Product Grid -->
@@ -5154,7 +5184,7 @@
     <script src="assets/customs/js/reels.js"></script>
 
 
-    <script src="nursery_categories/assets/nursery_new.js?v=13"></script>
+    <script src="nursery_categories/assets/nursery_new.js?v=15"></script>
 
 </body>
 
